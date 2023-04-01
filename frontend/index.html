@@ -1,349 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home page</title>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=PT+Sans&display=swap');
-  </style>
-    <style>
-        
-        #logo{
-            width: 90px;
-            margin-left: 25px;
-
-        }
-        *{
-            font-family: 'Open Sans', sans-serif;
-            /* font-family: 'PT Sans', sans-serif; */
-            margin: 0px;
-        }
-        nav{
-            position: fixed;
-            z-index: 1;
-            width: 100%;
-            top: 0px;
-            display: flex;
-            justify-content: space-between;
-            background-color: #0046be;
-            font-size: 30px;
-            color: #ffffff;
-        }
-        .menuIcon{
-            display: flex; 
-            align-items: center
-        }
-        .search input{
-            padding: 13px;
-            width: 450px;
-            border-radius: 25px;
-            border: none;
-        }
-        .search div:nth-child(2){
-            position:absolute;
-            margin-left: 420px;
-            margin-top: 8px;
-            color: #000000a3;
-
-        }
-        .leftMenu{
-            width: 60%;
-            display: flex;
-            align-items: center;
-            justify-content:space-between;
-
-        }
-        .rightMenu{
-            margin-right: 35px;
-            width: 7%;
-            display: flex;
-            align-items: center;
-            justify-content:space-between;
-
-        }
-        
-        .mainMenu{
-            position: relative;
-            top: 90px;
-            background-color: #0046be;
-            border-top:solid #2363d1;
-            padding: 20px;
-        }
-        ul{
-            list-style: none;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-        }
-        .mainbody{
-            margin-top: 90px;
-        }
-        .body1{
-            display: flex;
-        }
-        #leftbody{
-            width: 50%;
-            text-align: center;
-            margin: 20px;
-            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-        }
-        #leftbody img{
-            width: 600px;
-            /* border: solid red; */
-            margin-bottom: 20px;
-        }
-        #text{
-            font-size: 20px;
-            position: absolute;
-            margin:65px 0px 0px 200px;
-        }
-        #recom{
-            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            display: flex;
-            /* margin-top: 30px; */
-            justify-content: space-evenly;
-            padding: 10px;
-            /* width: 40%; */
-        }
-        #recom img{
-            width: 100px;
-            margin: 10px;
-        }
-        #rightdown{
-            display: flex;
-        }
-        #rightdown div{
-            margin: 10px;
-            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            display: flex;
-        }
-        #rightdown img{
-            width: 285px;
-        }
-        #samsung{
-            display: flex;
-        }
-        #samsung div{
-            width: 17%;
-            position: absolute;
-            margin: 50px 20px 0px 900px;
-            
-        }
-        #samsung button{
-            background-color: #0046be;
-            color: white;
-            padding: 7px;
-            border-radius: 5px;
-            border: 0px;
-            margin-top: 40px;
-        }
-        .sec{
-            
-            display: flex;
-            justify-content: space-evenly;
-            margin: 20px;
-        }
-        .sec img{
-            width: 400px;
-        }
-        .sec div{
-            padding: 10px;
-            margin: 5px;
-            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-        }
-        .sec h3{
-            line-height: 50px;
-        }
-        footer img{
-            width:200px
-        }
-        footer{
-            /* padding: 10px; */
-            background-color: #eaedf1c8;
-            
-        }
-        footer div:nth-child(1){
-            display: flex;
-            justify-content: space-evenly;
-        }
-        footer div:nth-child(2){
-            display: flex;
-            /* width: 60%; */
-            justify-content: space-evenly;
-        }
-        footer div:nth-child(2) div{
-            display: block;
-            margin-bottom: 20px;
-
-        }
-        footer h3{
-            line-height: 50px;
-        }
-        .socialmedia{
-            display: block;
-            font-size: 50px;
-        }
-    </style>
-</head>
-<body>
-    <nav>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="popup">
+        <!-- signin part -->
+        <div class="signIn">
+          <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
+          <h2>Sign In to Buy Here</h2>
+          
+          <input type="text" placeholder="Enter Email" />
+          <input type="text" placeholder="Enter Password" />
+          <button onclick="signIn()">Sign In</button>
+          <h3>OR</h3>
+          <button onclick="register()">Create New Account</button>
+          <!-- <button>Sign In with Apple</button> -->
+        </div>
+        <div class="register">
+          <h2>Create An Account</h2>
+          <input type="text" placeholder="Enter Your Name" />
+          <input type="email" placeholder="Email Address" />
+          <input type="password" placeholder="Enter Password" />
+          <input type="text" placeholder="Gender" />
+          <input type="number" placeholder="Age" />
+          <input type="text" placeholder="City" />
+          <button>Register</button>
+        </div>
+      </div>
+    <div class="container">
+      <nav>
         <div class="leftMenu">
-            <img  id="logo" src="../logo.png" alt="">
-            <div class="menuIcon">
-                <ion-icon name="menu"></ion-icon>
-                <p>Menu</p>
+          <img id="logo" src="../logo.png" alt="" />
+          <div class="menuIcon">
+            <ion-icon name="menu"></ion-icon>
+            <p>Menu</p>
+          </div>
+          <div class="search" style="display: flex">
+            <div>
+              <input type="text" placeholder="How Can We Help You Today..." />
             </div>
-            <div class="search" style="display: flex;">
-                <div><input type="text" placeholder="How Can We Help You Today..." ></div>
-                <div><ion-icon name="search-outline"></ion-icon></div>
-            </div>
+            <div><ion-icon name="search-outline"></ion-icon></div>
+          </div>
         </div>
         <div class="rightMenu">
+          <div onclick="activate()" id="person">
             <ion-icon name="person-outline"></ion-icon>
-            <ion-icon name="cart-outline"></ion-icon>
+          </div>
+
+          <ion-icon name="cart-outline"></ion-icon>
         </div>
-    </nav>
-    <div class="mainMenu">
+      </nav>
+      <div class="mainMenu">
         <ul>
-            <li>Top Deals</li>
-            <li>Deal of the Day</li>
-            <li>Total Tech Membership</li>
-            <li>Credit Cards</li>
-            <li>Gift Cards</li>
-            <li>More ></li>
-            <li>Recently Viewed </li>
-            <li>Order Status</li>
-            <li>Saved Items</li>
+          <li>Top Deals</li>
+          <li>Deal of the Day</li>
+          <li>Total Tech Membership</li>
+          <li>Credit Cards</li>
+          <li>Gift Cards</li>
+          <li>More ></li>
+          <li>Recently Viewed</li>
+          <li>Order Status</li>
+          <li>Saved Items</li>
         </ul>
-    </div>
-    <div class="mainbody">
+      </div>
+
+      <div class="mainbody">
         <div class="body1">
-            <div id="leftbody">
-                <div id="text">
-                    <h2>MacBook</h2>
-                    <p>Saveup to $700 on select models.</p>
-                    <p>Minimum saving is $50.</p>
-                </div>            
-                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-659787-macbook-f3e75956-d989-49c7-96b5-45eb5d4e73f5.jpg;maxHeight=1456;maxWidth=1456" alt="">
+          <div id="leftbody">
+            <div id="text">
+              <h2>MacBook</h2>
+              <p>Saveup to $700 on select models.</p>
+              <p>Minimum saving is $50.</p>
             </div>
-            <div id="rightbody">
-                <h3 style="line-height: 50px;">Recommended for You</h3>
-                <div id="recom">                
-                    <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901809_sd.jpg;maxHeight=640;maxWidth=550" alt="">
-                    <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5200/5200904_sd.jpg;maxHeight=640;maxWidth=550" alt="">
-                    <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6385/6385437_sd.jpg;maxHeight=640;maxWidth=550" alt="">
-                    <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901868_sd.jpg;maxHeight=640;maxWidth=550" alt="">
-                </div>
-                <div id="rightdown">
-                    <div >
-                        <img src="../images/pic1.png" alt="">
-                    </div>
-                    <div>
-                        <img src="../images/pic2.png" alt="">
-                    </div>
-                </div>
-                
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-659787-macbook-f3e75956-d989-49c7-96b5-45eb5d4e73f5.jpg;maxHeight=1456;maxWidth=1456"
+              alt=""
+            />
+          </div>
+          <div id="rightbody">
+            <h3 style="line-height: 50px">Recommended for You</h3>
+            <div id="recom">
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901809_sd.jpg;maxHeight=640;maxWidth=550"
+                alt=""
+              />
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5200/5200904_sd.jpg;maxHeight=640;maxWidth=550"
+                alt=""
+              />
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6385/6385437_sd.jpg;maxHeight=640;maxWidth=550"
+                alt=""
+              />
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901868_sd.jpg;maxHeight=640;maxWidth=550"
+                alt=""
+              />
             </div>
+            <div id="rightdown">
+              <div>
+                <img src="../images/pic1.png" alt="" />
+              </div>
+              <div>
+                <img src="../images/pic2.png" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
         <div class="sec">
-            <div><img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-669182-tv-16c7b1f5-f700-4469-bcf6-821e568b4e3f.jpg;maxHeight=960;maxWidth=960" alt=""> </div>
-            <div><img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-106837-iphone14-yellow-na-ghp-a82b438b-18ff-47cc-880a-63e33b653e8e.jpg;maxHeight=960;maxWidth=960" alt=""></div>
-            <div><img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/subghp-EVN-205712-upgrade-plus-b513dde8-d003-432d-b792-8b4eb9903e0d.jpg;maxHeight=960;maxWidth=960" alt=""></div>
+          <div>
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-669182-tv-16c7b1f5-f700-4469-bcf6-821e568b4e3f.jpg;maxHeight=960;maxWidth=960"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-106837-iphone14-yellow-na-ghp-a82b438b-18ff-47cc-880a-63e33b653e8e.jpg;maxHeight=960;maxWidth=960"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/subghp-EVN-205712-upgrade-plus-b513dde8-d003-432d-b792-8b4eb9903e0d.jpg;maxHeight=960;maxWidth=960"
+              alt=""
+            />
+          </div>
         </div>
-        <h3 style="padding: 0 0 20px 20px;border-bottom: solid rgba(191, 182, 182, 0.691);">Our Featured offers</h3>
+        <h3
+          style="
+            padding: 0 0 20px 20px;
+            border-bottom: solid rgba(191, 182, 182, 0.691);
+          "
+        >
+          Our Featured offers
+        </h3>
         <div class="sec">
-            
-            <div>
-                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-665820_DER-87a2497b-38b8-45a5-b746-0bb83bc7ee42.jpg;maxHeight=504;maxWidth=740" alt="">
-                <h3>Spring Appliance Savings Events.</h3>
-                <p>Upgrade your space and get fast fulfillment on select major Appliance</p>
-            </div>
-            <div>
-                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/top-MMT-665816-Save350WindowsLaptops_DER-b825f326-fdf3-4358-a96c-2bee0b54751f.jpg;maxHeight=504;maxWidth=740" alt="">
-                <h3>Save up to $350 on select Windows laptops.</h3>
-                <p>Minimum saving is $50</p>
-            </div>
-            <div>
-                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-635964-airpods-family-pol_der-c4fae3bf-49cc-4618-98ee-ca0a80ab6265.jpg;maxHeight=504;maxWidth=740" alt="">
-                <h3>AirPods Max.</h3>
-                <p>Over-ear headphones reimagined with immersive high-fidelity audio and an exceptional fit.</p>
-            </div>
+          <div>
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-665820_DER-87a2497b-38b8-45a5-b746-0bb83bc7ee42.jpg;maxHeight=504;maxWidth=740"
+              alt=""
+            />
+            <h3>Spring Appliance Savings Events.</h3>
+            <p>
+              Upgrade your space and get fast fulfillment on select major
+              Appliance
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/top-MMT-665816-Save350WindowsLaptops_DER-b825f326-fdf3-4358-a96c-2bee0b54751f.jpg;maxHeight=504;maxWidth=740"
+              alt=""
+            />
+            <h3>Save up to $350 on select Windows laptops.</h3>
+            <p>Minimum saving is $50</p>
+          </div>
+          <div>
+            <img
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-635964-airpods-family-pol_der-c4fae3bf-49cc-4618-98ee-ca0a80ab6265.jpg;maxHeight=504;maxWidth=740"
+              alt=""
+            />
+            <h3>AirPods Max.</h3>
+            <p>
+              Over-ear headphones reimagined with immersive high-fidelity audio
+              and an exceptional fit.
+            </p>
+          </div>
         </div>
         <div id="samsung">
-            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/custom_fluid_lg_mmt-666079-60b989c9-968b-4114-b8cf-3b96f84319c8.jpg" alt="">
-            <div>
-                <h2>SAMSUNG</h2>
-                <h2>Save up to</h2>
-                <p style="font-size: 100px;">$180</p>
-                <h3>on a storange upgrade on unlocked Samsung Galaxy S23 Series cell phones.</h3>
-                <button>Shop Now</button>
-            </div>
+          <img style="width:100%"
+            src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/custom_fluid_lg_mmt-666079-60b989c9-968b-4114-b8cf-3b96f84319c8.jpg"
+            alt=""
+          />
+          <div>
+            <h2>SAMSUNG</h2>
+            <h2>Save up to</h2>
+            <p style="font-size: 100px">$180</p>
+            <h3>
+              on a storange upgrade on unlocked Samsung Galaxy S23 Series cell
+              phones.
+            </h3>
+            <button>Shop Now</button>
+          </div>
         </div>
         <!-- footer part -->
         <footer>
+          <div>
+            <img src="../images/pic3.png" alt="" />
+            <img src="../images/pic4.png" alt="" />
+            <img src="../images/pic5.png" alt="" />
+            <img src="../images/pic6.png" alt="" />
+          </div>
+          <div>
             <div>
-                <img src="../images/pic3.png" alt="">
-                <img src="../images/pic4.png" alt="">
-                <img src="../images/pic5.png" alt="">
-                <img src="../images/pic6.png" alt="">
+              <h3>Order & purchase</h3>
+              <p>Check Order status</p>
+              <p>Shipping,Delivery</p>
+              <p>Price Match Guarntee</p>
+              <p>Products Recalls</p>
+              <p>Gift Cards</p>
+              <h3>Payment Options</h3>
+              <p>My Best Buy credit card</p>
+              <p>Pay Your Bill</p>
+              <p>Lease to Own</p>
             </div>
             <div>
-                <div>
-                    <h3>Order & purchase</h3>
-                    <p>Check Order status</p>
-                    <p>Shipping,Delivery</p>
-                    <p>Price Match Guarntee</p>
-                    <p>Products Recalls</p>
-                    <p>Gift Cards</p>
-                    <h3>Payment Options</h3>
-                    <p>My Best Buy credit card</p>
-                    <p>Pay Your Bill</p>
-                    <p>Lease to Own</p>              
-                    
-                </div>
-                <div >
-                    <h3>Support &Services</h3>
-                    <p>Shop with an Expert</p>
-                    <p>Schedule a service</p>
-                    <p>Manage an appoints</p>
-                    <p>contact Us</p>
-                    <h3>Rewards & Membership</h3>
-                    <p>Best Buy Totaltech</p>
-                    <p>My Best buy </p>
-                    <p>View points & certificates</p>
-                    <p>Member Offers</p>
-
-                </div>
-                <div>
-                    <h3>Partnership</h3>
-                    <p>Affiliate Program</p>
-                    <p>Advertise with us</p>
-                    <p>Developers</p>
-                    <p>Best buy Health</p>
-                    <p>Best buy Education</p>
-                    <h3>About Best Buy</h3>
-                    <p>corporate information</p>
-                    <p>careers</p>
-                    <p>corporate Responsability</p>
-                    <p>Discover & Learn</p>
-    
-                </div>
-                <div class="socialmedia">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    <ion-icon name="logo-youtube"></ion-icon>
-                    <ion-icon name="logo-twitter"></ion-icon>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </div>
+              <h3>Support &Services</h3>
+              <p>Shop with an Expert</p>
+              <p>Schedule a service</p>
+              <p>Manage an appoints</p>
+              <p>contact Us</p>
+              <h3>Rewards & Membership</h3>
+              <p>Best Buy Totaltech</p>
+              <p>My Best buy</p>
+              <p>View points & certificates</p>
+              <p>Member Offers</p>
             </div>
+            <div>
+              <h3>Partnership</h3>
+              <p>Affiliate Program</p>
+              <p>Advertise with us</p>
+              <p>Developers</p>
+              <p>Best buy Health</p>
+              <p>Best buy Education</p>
+              <h3>About Best Buy</h3>
+              <p>corporate information</p>
+              <p>careers</p>
+              <p>corporate Responsability</p>
+              <p>Discover & Learn</p>
+            </div>
+            <div class="socialmedia">
+              <ion-icon name="logo-facebook"></ion-icon>
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <ion-icon name="logo-youtube"></ion-icon>
+              <ion-icon name="logo-twitter"></ion-icon>
+              <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+          </div>
         </footer>
+      </div>
     </div>
-   
-</body>
+    
+  </body>
 </html>
+
+<script>
+  let signIn = document.querySelector(".signIn");
+  let container = document.querySelector(".container");
+  function activate() {
+    container.classList.add("activate");
+    signIn.classList.add("activate");
+  }
+  function remove() {
+    console.log("close");
+    container.classList.remove("activate");
+    signIn.classList.remove("activate");
+  }
+</script>

@@ -1,0 +1,247 @@
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=PT+Sans&display=swap');
+
+        #logo{
+            width: 90px;
+            margin-left: 25px;
+
+        }
+        *{
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            box-sizing: border-box; 
+            padding: 0;
+        }
+        nav{
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #0046be;
+            font-size: 30px;
+            color: #ffffff;
+        }
+        .menuIcon{
+            display: flex; 
+            align-items: center
+        }
+        .search input{
+            padding: 13px;
+            width: 450px;
+            border-radius: 25px;
+            border: none;
+        }
+        .search div:nth-child(2){
+            position:absolute;
+            margin-left: 420px;
+            margin-top: 8px;
+            color: #000000a3;
+
+        }
+        #person:hover{
+            cursor: pointer;
+            font-size: 35px;
+            transition: 1s;            
+        }
+        #close{
+            font-size: 30px;
+            display: block;
+            margin-left: 270px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.812);
+            border-radius: 5px;
+            /* z-index: 1; */
+        }
+        .signIn{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            background-color: rgb(46, 126, 196);
+            margin: 150px 0px 0px 490px;
+            position: absolute;
+            width: 25%;
+            border-radius: 15px;
+            display: none;
+            transition: 0.5s;
+        }
+        .signIn.activate{
+            display: block;
+            opacity: 1;
+            z-index: 1;
+            transition: 0.5s;
+        }
+        .register{
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background-color: #0046be;
+            margin: 150px 0px 0px 490px;
+            position: relative;
+            width: 25%;
+            border-radius: 15px;
+            border: solid red;
+            display: none;
+            transition: 0.5s;
+
+        }
+        .container.activate{
+            opacity: 0.5;
+            
+        }
+        .signIn input {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+        }
+        .signIn button{
+            width: 100%;
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+            background-color:orangered;
+            
+        }
+        .leftMenu{
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+
+        }
+        .rightMenu{
+            margin-right: 35px;
+            width: 7%;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+
+        }
+        
+        .mainMenu{
+            position: relative;
+            top: 90px;
+            background-color: #0046be;
+            border-top:solid #2363d1;
+            padding: 20px;
+        }
+        ul{
+            list-style: none;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        .mainbody{
+            margin-top: 90px;
+        }
+        .body1{
+            display: flex;
+        }
+        #leftbody{
+            width: 50%;
+            text-align: center;
+            margin: 20px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        #leftbody img{
+            width: 600px;
+            /* border: solid red; */
+            margin-bottom: 20px;
+        }
+        #text{
+            font-size: 20px;
+            position: absolute;
+            margin:65px 0px 0px 200px;
+        }
+        #recom{
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            display: flex;
+            /* margin-top: 30px; */
+            justify-content: space-evenly;
+            padding: 10px;
+            /* width: 40%; */
+        }
+        #recom img{
+            width: 100px;
+            margin: 10px;
+        }
+        #rightdown{
+            display: flex;
+        }
+        #rightdown div{
+            margin: 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            display: flex;
+        }
+        #rightdown img{
+            width: 285px;
+        }
+        #samsung{
+            display: flex;
+        }
+        #samsung div{
+            width: 17%;
+            position: absolute;
+            margin: 50px 20px 0px 900px;
+            
+        }
+        #samsung button{
+            background-color: #0046be;
+            color: white;
+            padding: 7px;
+            border-radius: 5px;
+            border: 0px;
+            margin-top: 40px;
+        }
+        .sec{
+            
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px;
+        }
+        .sec img{
+            width: 400px;
+        }
+        .sec div{
+            padding: 10px;
+            margin: 5px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        .sec h3{
+            line-height: 50px;
+        }
+        footer img{
+            width:200px
+        }
+        footer{
+            /* padding: 10px; */
+            background-color: #eaedf1c8;
+            
+        }
+        footer div:nth-child(1){
+            display: flex;
+            justify-content: space-evenly;
+        }
+        footer div:nth-child(2){
+            display: flex;
+            /* width: 60%; */
+            justify-content: space-evenly;
+        }
+        footer div:nth-child(2) div{
+            display: block;
+            margin-bottom: 20px;
+
+        }
+        footer h3{
+            line-height: 50px;
+        }
+        .socialmedia{
+            display: block;
+            font-size: 50px;
+        }
