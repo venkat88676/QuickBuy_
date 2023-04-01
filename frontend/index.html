@@ -20,26 +20,40 @@
         <!-- signin part -->
         <div class="signIn">
           <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
-          <h2>Sign In to Buy Here</h2>
-          
-          <input type="text" placeholder="Enter Email" />
-          <input type="text" placeholder="Enter Password" />
-          <button onclick="signIn()">Sign In</button>
+          <h2>Sign In to Buy Here</h2> 
+          <div class="icons">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-twitter"></ion-icon>
+            <ion-icon name="logo-google"></ion-icon>
+          </div>        
+
+          <input type="text" id="emailLog" placeholder="Enter Email" />
+          <input type="password" id="passLog" placeholder="Enter Password" />
+          <button onclick="onSignIn()">Sign In</button>
           <h3>OR</h3>
           <button onclick="register()">Create New Account</button>
-          <!-- <button>Sign In with Apple</button> -->
         </div>
+        <!-- registeration part -->
         <div class="register">
+          <ion-icon id="prev" onclick="prev()" name="return-up-back-outline"></ion-icon>
+          <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
           <h2>Create An Account</h2>
-          <input type="text" placeholder="Enter Your Name" />
-          <input type="email" placeholder="Email Address" />
-          <input type="password" placeholder="Enter Password" />
-          <input type="text" placeholder="Gender" />
-          <input type="number" placeholder="Age" />
-          <input type="text" placeholder="City" />
-          <button>Register</button>
+          <div class="icons">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-twitter"></ion-icon>
+            <ion-icon name="logo-google"></ion-icon>
+          </div>
+          <input id="name" type="text" placeholder="Enter Your Name" />
+          <input id="email" type="email" placeholder="Email Address" />
+          <input id="password" type="password" placeholder="Enter Password" />
+          <input id="gender" type="text" placeholder="Gender" />
+          <input  id="age" type="number" placeholder="Age" />
+          <input id="city" type="text" placeholder="City" />
+          <button onclick="onRegister()">Register</button>
         </div>
       </div>
+
+      <!-- Main Body -->
     <div class="container">
       <nav>
         <div class="leftMenu">
@@ -265,8 +279,72 @@
     signIn.classList.add("activate");
   }
   function remove() {
-    console.log("close");
     container.classList.remove("activate");
     signIn.classList.remove("activate");
+    registerBtn.classList.remove("activate");
   }
+  let registerBtn=document.querySelector('.register')
+  function register(){
+    registerBtn.classList.add('activate')
+    signIn.classList.remove("activate");
+  }
+  function prev(){
+    console.log("prev")
+    signIn.classList.add("activate");
+    registerBtn.classList.remove("activate");
+  }
+
+  function onRegister(){
+    console.log("register")
+    let name=document.getElementById('name').value;
+    let email=document.getElementById('email').value;
+    let password=document.getElementById('password').value;
+    let gender=document.getElementById('gender').value;
+    let age=document.getElementById('age').value;
+    let city=document.getElementById('city').value;
+    let payload={name,email,password,gender,age,city}
+    fetch("http://localhost:4300/users/register",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body: JSON.stringify(payload)
+    }).then(res=>res.json())
+    .then(res=>{
+      console.log(res)
+      alert("Registered Successfully")
+    })
+    .catch(err=>{
+      alert("Please Fill all the column")
+      console.log(err)})
+  }
+
+  function onSignIn(){
+    let payload={
+        email:document.getElementById("emailLog").value,
+        password:document.getElementById("passLog").value
+    }
+    console.log(payload)
+    fetch("http://localhost:4300/users/login",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body: JSON.stringify(payload)
+    }).then(res=>res.json())
+    .then(res=>{
+        if(res.token){
+          alert("Login Successful")
+        localStorage.setItem("token",res.token)
+        }
+        else{
+          alert("Wrong Credential")
+        }
+    })
+    .catch(err=>{
+      
+      console.log(err)})
+  }
+
+
 </script>
