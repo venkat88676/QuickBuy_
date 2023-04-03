@@ -10,6 +10,6 @@ const proSchema=mongoose.Schema({
     versionKey:false
 })
 
-const ProModel=mongoose.model("product",proSchema)
+const ProModel=mongoose.model("Product",proSchema)
 
 module.exports={ProModel}

@@ -6,22 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
     <link rel="stylesheet" href="index.css">
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
 </head>
 <body>
    
          <!-- navigation -->
         <nav>
           <div class="leftMenu">
-            <img id="logo" src="../logo.png" alt="" />
+            <a href="./index.html"><img id="logo" src="../logo.png" alt="" /></a>
             <div class="menuIcon">
               <ion-icon name="menu"></ion-icon>
               <p>Menu</p>
             </div>
             <div class="search" style="display: flex">
               <div>
-                <input type="text" placeholder="How Can We Help You Today..." />
+                <input type="text"  id="name" placeholder="How Can We Help You Today..." />
               </div>
-              <div><ion-icon name="search-outline"></ion-icon></div>
+              <div onclick="getval()" id="iconSrc"><ion-icon name="search-outline"></ion-icon></div>
             </div>
           </div>
           <div class="rightMenu">
@@ -29,7 +37,7 @@
               <ion-icon name="person-outline"></ion-icon>
             </div>
   
-            <ion-icon name="cart-outline"></ion-icon>
+            <a href="./cart.html"><ion-icon name="cart-outline"></ion-icon></a>
           </div>
         </nav>
         <div class="mainMenu">
@@ -37,17 +45,39 @@
             <li>Top Deals</li>
             <li>Deal of the Day</li>
             <li>Total Tech Membership</li>
-            <li>Credit Cards</li>
-            <li>Gift Cards</li>
-            <li>More ></li>
+            <a href="./products.html"><li>View All ></li></a>
             <li>Recently Viewed</li>
             <li>Order Status</li>
             <li>Saved Items</li>
           </ul>
         </div>
         <!-- mainBody -->
-        <div class="ProContainer">
-
+        <div class="maincont">
+          <div class="filter">
+            <select onchange="getval()" id="rating">
+              <option value="">Filter By Rating</option>
+              <option value="4.5">Above 4.5</option>
+              <option value="4">Above 4</option>
+              <option value="3.5">Above 3.5</option>
+              <option value="3">Above 3</option>
+            </select>
+            <select onchange="getval()"  id="byType">
+              <option value="">Select Type</option>
+              <option value="smartphone">Smartphones</option>
+              <option value="laptop">Laptops</option>
+              <option value="tv">Smart TV</option>
+              <option value="headphone">HeadPhones</option>
+            </select>
+          </div>
+          <div class="proContainer">
+          </div>      
+        </div>
+        <div class="pageNo">
+          <div onclick="get1()" id="one">1</div>
+          <div onclick="get2()" id="two">2</div>
+          <div onclick="get3()" id="three">3</div>
+          <div onclick="get4()" id="four">4</div>
+          <div onclick="get5()" id="five">5</div>
         </div>
           <!-- footer part -->
         <footer>
@@ -108,7 +138,80 @@
 </html>
 
 <script>
-    function getData(){
-        fetch
+  let category=""
+  let rating=""
+  let name=""
+  let page=1
+  function get1(){page=1
+     getData()}
+  function get2(){page=2
+    getData()}
+  function get3(){page=3
+    getData()}
+  function get4(){page=4
+    getData()}
+  function get5(){page=5
+    getData()}
+  function getval(){
+    name=document.getElementById('name').value   
+    category=document.getElementById("byType").value
+    rating=document.getElementById("rating").value
+    console.log(category,rating,name)
+    getData()
+  }
+
+  
+ 
+    
+    function getData(){    
+         
+      fetch(`http://localhost:4300/products?category=${category}&rating=${rating}&name=${name}&page=${page}`).then(res=>res.json())
+    .then(res=>{
+      console.log(res)
+      let proContainer=document.querySelector(".proContainer")
+      proContainer.innerText=null
+      for(let i=0;i<res.length;i++){
+        let card=document.createElement('div')
+        let img=document.createElement('img')
+        img.src=res[i].image
+        let name=document.createElement('h4')
+        name.innerText=res[i].name
+        let price=document.createElement('h4')
+        price.innerText = `₹${res[i].price}/- ...Rating:- ${res[i].rating} ★★★★☆`;
+        let btn = document.createElement("button");
+        btn.innerText = 'Add To Cart'
+
+        btn.addEventListener("click",()=>{
+          console.log("cart")
+          fetch("http://localhost:4300/cart/create",{
+            method:"POST",
+            headers:{
+            "Content-type":"application/json",
+            "Authorization":localStorage.getItem("token")
+          },
+          body: JSON.stringify(res[i])
+          }).then(res=>res.json())
+          .then(res=>{
+            if(res.msg!=='added'){
+              alert("Already in Cart")
+            }
+            else{
+              alert("Product Added To Cart")
+            }
+            
+            console.log(res.msg)
+          })
+          .catch(err=>{
+            alert('Please Login First')
+            console.log(err)})
+        })       
+        card.append(img,name,price,btn)
+        proContainer.append(card)
+      }      
+    })
+    .catch(err=>{
+      console.log(err)})
     }
+
+    getData()
 </script>
