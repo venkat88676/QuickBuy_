@@ -1,11 +1,10 @@
 {
   "name": "rural-vessel-2538",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server":"nodemon index.js"
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +25,6 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22"
-  }
+  },
+  "description": ""
 }
