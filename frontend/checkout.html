@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkout</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <!-- navigation -->
+    <nav>
+      <div class="leftMenu">
+        <a href="./index.html"><img id="logo" src="../logo.png" alt="" /></a>
+        <div class="menuIcon">
+          <ion-icon name="menu"></ion-icon>
+          <p>Menu</p>
+        </div>
+        <div class="search" style="display: flex">
+          <div>
+            <input type="text" placeholder="How Can We Help You Today..." />
+          </div>
+          <div><ion-icon name="search-outline"></ion-icon></div>
+        </div>
+      </div>
+      <div class="rightMenu">
+        <div onclick="activate()" id="person">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+
+        <ion-icon name="cart-outline"></ion-icon>
+      </div>
+    </nav>
+    <div class="mainMenu">
+      <ul>
+        <li>Top Deals</li>
+        <li>Deal of the Day</li>
+        <li>Total Tech Membership</li>
+        <a href="./products.html"><li>View All ></li></a>
+        <li>Recently Viewed</li>
+        <li>Order Status</li>
+        <li>Saved Items</li>
+      </ul>
+    </div>
+
+    <!-- mainBody -->
+    <div class="checkout">
+            <h2>Shipping Information</h2>
+            <input placeholder="Enter Your Name.." type="text" id="name" name="name" required>
+            <input placeholder="Enter Your Address.. " type="text" id="address" name="address" required>
+      
+            <input placeholder="Enter Your City.." >
+      
+            <h2>Payment Information</h2>
+            <select name="" id="">
+                <option value="">Payment Option</option>
+                <option value="">Debit Card</option>
+                <option value="">credit-card</option>
+                <option value="">paytm-wallet</option>
+
+            </select>
+            <input placeholder="Enter Card Number.." type="text" id="card-number" name="card-number" required>
+            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+
+            <input type="text" id="cvv" placeholder="C v v" name="cvv" required="true">
+          
+          <button onclick="submitCart()" id="submitCart">Submit</button>
+    </div>
+    
+    
+  
+    <!-- footer part -->
+    <footer>
+      <div>
+        <img src="../images/pic3.png" alt="" />
+        <img src="../images/pic4.png" alt="" />
+        <img src="../images/pic5.png" alt="" />
+        <img src="../images/pic6.png" alt="" />
+      </div>
+      <div>
+        <div>
+          <h3>Order & purchase</h3>
+          <p>Check Order status</p>
+          <p>Shipping,Delivery</p>
+          <p>Price Match Guarntee</p>
+          <p>Products Recalls</p>
+          <p>Gift Cards</p>
+          <h3>Payment Options</h3>
+          <p>My Best Buy credit card</p>
+          <p>Pay Your Bill</p>
+          <p>Lease to Own</p>
+        </div>
+        <div>
+          <h3>Support &Services</h3>
+          <p>Shop with an Expert</p>
+          <p>Schedule a service</p>
+          <p>Manage an appoints</p>
+          <p>contact Us</p>
+          <h3>Rewards & Membership</h3>
+          <p>Best Buy Totaltech</p>
+          <p>My Best buy</p>
+          <p>View points & certificates</p>
+          <p>Member Offers</p>
+        </div>
+        <div>
+          <h3>Partnership</h3>
+          <p>Affiliate Program</p>
+          <p>Advertise with us</p>
+          <p>Developers</p>
+          <p>Best buy Health</p>
+          <p>Best buy Education</p>
+          <h3>About Best Buy</h3>
+          <p>corporate information</p>
+          <p>careers</p>
+          <p>corporate Responsability</p>
+          <p>Discover & Learn</p>
+        </div>
+        <div class="socialmedia">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-youtube"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+    function submitCart(){
+        alert("Order Has Been Placed")
+        window.location='./index.html'
+    }
+</script>
+

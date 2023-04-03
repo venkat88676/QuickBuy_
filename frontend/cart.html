@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <!-- navigation -->
+    <nav>
+      <div class="leftMenu">
+        <a href="./index.html"><img id="logo" src="../logo.png" alt="" /></a>
+        <div class="menuIcon">
+          <ion-icon name="menu"></ion-icon>
+          <p>Menu</p>
+        </div>
+        <div class="search" style="display: flex">
+          <div>
+            <input type="text" placeholder="How Can We Help You Today..." />
+          </div>
+          <div><ion-icon name="search-outline"></ion-icon></div>
+        </div>
+      </div>
+      <div class="rightMenu">
+        <div onclick="activate()" id="person">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+
+        <ion-icon name="cart-outline"></ion-icon>
+      </div>
+    </nav>
+    <div class="mainMenu">
+      <ul>
+        <li>Top Deals</li>
+        <li>Deal of the Day</li>
+        <li>Total Tech Membership</li>
+        <a href="./products.html"><li>View All ></li></a>
+        <li>Recently Viewed</li>
+        <li>Order Status</li>
+        <li>Saved Items</li>
+      </ul>
+    </div>
+
+    <!-- mainBody -->
+    <h2 id="tolItem"></h2>
+    <div class="maincont">
+      <div class="cartContainer"></div>
+      <div class="payment">
+        <h2 id="summary">Order Summary</h2>
+        <div id="AmtDiv">
+          <!-- <h4>Item Total</h4>
+          <h4 id="tolAmt"></h4> -->
+        </div>
+        <div>
+          <h4>Store Pickup</h4>
+          <h4 style="color: rgb(9, 139, 9)">Free</h4>
+        </div>
+        <div id="tol">
+          <h2>Total</h2>
+          <h2 id="subTol"></h2>
+        </div>
+        <a href="./checkout.html"><button>Checkout</button></a>
+        <button>PayPal Checkout</button>
+      </div>
+    </div>
+    <h3 style="line-height: 50px">Recommended for You</h3>
+    <div id="recom">
+      <img
+        src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901809_sd.jpg;maxHeight=640;maxWidth=550"
+        alt=""
+      />
+      <img
+        src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5200/5200904_sd.jpg;maxHeight=640;maxWidth=550"
+        alt=""
+      />
+      <img
+        src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6385/6385437_sd.jpg;maxHeight=640;maxWidth=550"
+        alt=""
+      />
+      <img
+        src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901868_sd.jpg;maxHeight=640;maxWidth=550"
+        alt=""
+      />
+    </div>
+    <!-- footer part -->
+    <footer>
+      <div>
+        <img src="../images/pic3.png" alt="" />
+        <img src="../images/pic4.png" alt="" />
+        <img src="../images/pic5.png" alt="" />
+        <img src="../images/pic6.png" alt="" />
+      </div>
+      <div>
+        <div>
+          <h3>Order & purchase</h3>
+          <p>Check Order status</p>
+          <p>Shipping,Delivery</p>
+          <p>Price Match Guarntee</p>
+          <p>Products Recalls</p>
+          <p>Gift Cards</p>
+          <h3>Payment Options</h3>
+          <p>My Best Buy credit card</p>
+          <p>Pay Your Bill</p>
+          <p>Lease to Own</p>
+        </div>
+        <div>
+          <h3>Support &Services</h3>
+          <p>Shop with an Expert</p>
+          <p>Schedule a service</p>
+          <p>Manage an appoints</p>
+          <p>contact Us</p>
+          <h3>Rewards & Membership</h3>
+          <p>Best Buy Totaltech</p>
+          <p>My Best buy</p>
+          <p>View points & certificates</p>
+          <p>Member Offers</p>
+        </div>
+        <div>
+          <h3>Partnership</h3>
+          <p>Affiliate Program</p>
+          <p>Advertise with us</p>
+          <p>Developers</p>
+          <p>Best buy Health</p>
+          <p>Best buy Education</p>
+          <h3>About Best Buy</h3>
+          <p>corporate information</p>
+          <p>careers</p>
+          <p>corporate Responsability</p>
+          <p>Discover & Learn</p>
+        </div>
+        <div class="socialmedia">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-youtube"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  function getCart() {
+    console.log("inside cart");
+    fetch("http://localhost:4300/cart", {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        let proContainer = document.querySelector(".cartContainer");
+        let tolItem = document.getElementById("tolItem");
+        tolItem.innerText = `Total Item in Your Cart is ${res.length}`;
+        if (res.length == 0) {
+          let img = document.createElement("img");
+          img.src =
+            "https://shop.millenniumbooksource.com/static/images/cart1.png";
+          img.style.width = "700px";
+          proContainer.append(img);
+        }
+        let sum=0
+        for (let i = 0; i < res.length; i++) {
+          let card = document.createElement("div");
+          let img = document.createElement("img");
+          img.src = res[i].image;
+          let name = document.createElement("h4");
+          name.innerText = res[i].name;
+          let price = document.createElement("h4");
+          price.innerText = `₹${res[i].price}/- `;
+          let cartIn = document.createElement("div");
+          cartIn.classList.add("cartIn");
+          let remove = document.createElement("button");
+          remove.innerText = "Remove";
+          let quantity = document.createElement("span");
+          quantity.innerText = res[i].quantity;
+          let inc = document.createElement("button");
+          inc.innerText = "+";
+          inc.addEventListener("click", () => {            
+            res[i].quantity=res[i].quantity+1
+            let payload={quantity:res[i].quantity}
+            fetch(`http://localhost:4300/cart/update/${res[i]._id}`, {
+              method: "PATCH",
+              headers: {
+                "Content-type": "application/json",
+                Authorization: localStorage.getItem("token"),
+              },
+              body: JSON.stringify(payload)
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                alert("Updated Successfully");
+                location.reload();
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          });
+
+
+          let dec = document.createElement("button");
+          dec.innerText = "-";
+
+          dec.addEventListener("click", () => {
+            res[i].quantity=res[i].quantity-1
+            let payload={quantity:res[i].quantity}
+            fetch(`http://localhost:4300/cart/update/${res[i]._id}`, {
+              method: "PATCH",
+              headers: {
+                "Content-type": "application/json",
+                Authorization: localStorage.getItem("token"),
+              },
+              body: JSON.stringify(payload)
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                alert("Updated Successfully");
+                location.reload();
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+           
+          });
+         
+          cartIn.append(dec, quantity, inc, remove);
+
+          let text=document.createElement('h3')
+          text.innerText=`Tol. Amt is :- ${res[i].price*res[i].quantity}`
+          sum=sum+res[i].price*res[i].quantity
+          let AmtDiv=document.getElementById('AmtDiv')
+          AmtDiv.append(text)
+
+          remove.addEventListener("click", () => {
+            fetch(`http://localhost:4300/cart/delete/${res[i]._id}`, {
+              method: "DELETE",
+              headers: {
+                "Content-type": "application/json",
+                Authorization: localStorage.getItem("token"),
+              },
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                alert("Delete Successfully");
+                location.reload();
+              })
+              .catch((err) => {
+                alert("Please Login First");
+                window.location.reload(true);
+                console.log(err);
+              });
+          });
+
+          card.append(img, name, price, cartIn);
+          proContainer.append(card);
+        }
+        let tol=document.getElementById('subTol')
+        tol.innerText=sum
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  getCart();
+</script>

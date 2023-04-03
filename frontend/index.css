@@ -12,6 +12,9 @@
             box-sizing: border-box; 
             padding: 0;
         }
+        a{
+            color: white;
+        }
         nav{
             position: fixed;
             z-index: 1;
@@ -35,10 +38,13 @@
         }
         .search div:nth-child(2){
             position:absolute;
-            margin-left: 420px;
+            margin-left: 400px;
             margin-top: 8px;
             color: #000000a3;
 
+        }
+        #iconSrc{
+            cursor: pointer;
         }
         #person:hover{
             cursor: pointer;
@@ -47,44 +53,86 @@
         }
         #close{
             font-size: 30px;
-            display: block;
-            margin-left: 270px;
+            /* margin-left: 270px; */
+            position: relative;
+            left: 150px;
             cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.812);
+            color: black;
+            background-color: rgb(255, 255, 255, 0.812);
             border-radius: 5px;
+            transition: 0.5s;
             /* z-index: 1; */
+        }
+        #prev{
+            font-size: 30px;
+            position: relative;
+            right: 150px;
+            /* display: block; */
+            /* margin-right: 270px; */
+            cursor: pointer;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.812);
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+        .icons{
+            font-size: 25px;
         }
         .signIn{
             text-align: center;
             color: rgb(255, 255, 255);
             padding: 20px;
-            background-color: rgb(46, 126, 196);
-            margin: 150px 0px 0px 490px;
+            background-color: #2980f3;
+            margin: 160px 0px 0px 490px;
             position: absolute;
-            width: 25%;
+            width: 30%;
             border-radius: 15px;
             display: none;
-            transition: 0.5s;
+            /* transition: 1s; */
         }
         .signIn.activate{
             display: block;
             opacity: 1;
             z-index: 1;
-            transition: 0.5s;
         }
         .register{
             text-align: center;
             color: white;
             padding: 20px;
-            background-color: #0046be;
+            background-color: #2980f3;
             margin: 150px 0px 0px 490px;
-            position: relative;
-            width: 25%;
+            position: absolute;
+            width: 30%;
             border-radius: 15px;
-            border: solid red;
             display: none;
             transition: 0.5s;
+            line-height: 40px;
 
+        }
+        .register input{
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+        }
+        .register button{
+            cursor: pointer;
+            width: 90%;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin: 10px;
+            background-color:#ffce00;
+            color: black;
+            font-weight: bold;
+        }
+        .register.activate{
+            display: block;
+            opacity: 1;
+            z-index: 1;
+            transition: 0.5s;
         }
         .container.activate{
             opacity: 0.5;
@@ -98,14 +146,16 @@
             margin: 10px;
         }
         .signIn button{
-            width: 100%;
+            cursor: pointer;
+            width: 90%;
             font-size: 15px;
-            color: rgb(255, 255, 255);
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 20px;
             border: none;
-            margin: 10px;
-            background-color:orangered;
+            margin-top: 20px;
+            background-color:#ffce00;
+            color: black;
+            font-weight: bold;
             
         }
         .leftMenu{
@@ -162,7 +212,7 @@
         #recom{
             box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
             display: flex;
-            /* margin-top: 30px; */
+            margin: 10px;
             justify-content: space-evenly;
             padding: 10px;
             /* width: 40%; */
@@ -244,4 +294,178 @@
         .socialmedia{
             display: block;
             font-size: 50px;
+        }
+
+        /* products page */
+        .maincont{
+            display: flex;
+        }
+        .filter{
+            /* position: fixed; */
+            padding: 10px;
+            width: 25%;
+            margin-top: 10%;
+            /* border: solid red; */
+        }
+        .filter select{
+            margin-top: 10px;
+            font-size: large;
+            font-weight: bold;
+            text-align: center;
+            width: 90%;
+            padding: 10px;
+        }
+        #tolItem{
+            margin: 120px 500px 20px 20px;
+            border-bottom:solid rgba(71, 68, 68, 0.719) ;
+        }
+        .proContainer{
+            /* border: solid red; */
+            width: 65%;
+            margin-left: 5%;
+           margin-top: 10%;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3,1fr);          
+
+        }
+        .cartContainer{
+            width: 65%;
+            margin-left: 5%;
+            gap: 20px;
+        }
+        .cartContainer img{
+            width: 100px;
+        }
+        .cartContainer>div{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        .cartIn button{
+            cursor: pointer;
+            background-color: #2980f3;
+            border: none;
+            color: white;
+            border-radius: 2px;
+            padding: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .proContainer img{
+            width: 200px;
+        }
+        .proContainer div{
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        .proContainer button{
+            cursor: pointer;
+            width: 50%;
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 20px;
+            background-color:#ffce00;
+            color: black;
+            font-weight: bold;
+             
+        }
+
+        /* cart page */
+        .payment{
+            line-height: 40px;
+            padding: 10px;
+            margin: 10px;
+            /* margin-top: 10%; */
+            margin-left: 25px;
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+
+        .payment button{
+            cursor: pointer;
+            width: 70%;
+            font-size: 18px;
+            font-weight: bolder;
+            color: rgb(255, 255, 255);
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+            margin-left: 55px;
+            background-color:#ffce00;
+            color: black;          
+             
+        }
+        #tol{
+            border-top: solid rgba(106, 99, 99, 0.712);
+        }
+        #summary{
+            border-bottom: solid rgba(106, 99, 99, 0.712);
+        }
+
+        /* checkout */
+        .checkout{
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            margin-top: 9%;
+            width: 40%;
+            margin-left: 35%;
+            padding: 10px;
+            margin-bottom: 5%;
+        }
+        .checkout input{
+            width: 95%;
+            padding: 10px;
+            margin: 10px;
+        }
+        .checkout select{
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+        .checkout button{
+            cursor: pointer;
+            width: 80%;
+            font-size: 18px;
+            font-weight: bolder;
+            color: rgb(255, 255, 255);
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+            margin-left: 55px;
+            background-color:#ffce00;
+            color: black;    
+        }
+
+        /* pagination */
+        .pageNo{
+            display: flex;
+            width: 20%;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding: 10px;
+            justify-content: space-evenly;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            border-radius: 5px;
+        }
+        .pageNo div{
+            cursor: pointer;
+            background-color: #ffce00;
+            /* border: solid red; */
+            font-weight: bold;
+            padding: 6px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            font-size: 25px;
+            border-radius: 5px;
         }
