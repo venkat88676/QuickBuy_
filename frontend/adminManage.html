@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="./style/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="./index.html"><img style="width: 60px;margin-top: 0px;" src="./images/logo.png" alt="image"></a>
+        <div class="search" style="display: flex;">
+            <div><input type="text" placeholder="search" ></div>
+            <div><i  class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+
+        <div class="icons">
+            <i class="fa-sharp fa-regular fa-user"></i>           
+        </div>
+    </div>
+    <div class="main">
+        <div class="left">
+            <ul>
+                <li>
+                    <a href="./admin.html">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title"> Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./adminManage.html">
+                        <span class="icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
+                        <span class="title">Manage Products</span> 
+                    </a>                    
+                </li>             
+                <li>
+                    <a href="./index.html">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Logout</span> 
+                    </a>                    
+                </li>               
+
+            </ul>
+            
+        </div>
+        <div class="right">
+            <div >
+                <ion-icon class="menu icon" name="menu-outline"></ion-icon>
+                <span id="heading">Manage Products</span>
+            </div> 
+
+            <div class="mainSec">
+                
+                <div class="formfill">
+                    <form>
+                        <label for="category">Select Category</label>
+                        <select  id="category" name="category">
+                          <option value="">Select Category</option>
+                          <option value="smartphone">Smartphones</option>
+                            <option value="laptop">Laptops</option>
+                            <option value="tv">Smart TV</option>
+                            <option value="headphone">HeadPhones</option>
+                        </select>
+                        <br />
+                        <label for="title">Title</label>
+                        <input type="text" id="title" placeholder="Enter Title.." />
+                        <label for="">Price</label>
+                        <input type="text" id="price" placeholder="Enter Price.." />
+                        <label for="">Image URL</label>
+                        <input type="text" id="url" placeholder="URL" />
+                        <button id="new">Add</button>
+                        <button id="update">Update</button>
+                       
+                      </form>
+                </div>      
+               
+                <div class="table1">
+                    <table >
+                        <thead>
+                            <td>Name</td>
+                            <td>Category</td>
+                            <td>Price</td>
+                            <td>Image</td>
+                            <td>Manage</td>
+                        </thead>
+                        <tbody class="tproducts">
+                             <!-- Append all data -->
+                        </tbody>
+                       
+                     </table>
+                </div>   
+            </div>
+            
+            
+        </div>
+    </div>
+    <!-- for icons installation -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="./script/adminManage.js"></script>
+
+
+
+
+</body>
+</html>
+

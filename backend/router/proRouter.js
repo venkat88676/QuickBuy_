@@ -20,7 +20,7 @@ proRouter.get('/',async(req,res)=>{
         skip=(page-1)*9
     }
     try{
-        let products=await ProModel.find(filter).skip(skip).limit(9);
+        let products=await ProModel.find(filter).skip(skip).limit(15);
         res.send(products)
     }catch(err){
         console.log(err)
@@ -33,6 +33,29 @@ proRouter.post('/add',async(req,res)=>{
     try{
         await product.save()
          res.status(200).send({"msg":"added"})
+    }catch(err){
+        res.status(400).send(err)
+    }    
+})
+
+proRouter.patch('/:id', async (req, res) => {
+    const id = req.params.id;
+    const payload = req.body;
+    console.log(payload, id);
+    try {
+      await ProModel.findByIdAndUpdate(id, payload);
+      res.status(200).send({ "msg": "product updated" });
+    } catch (err) {
+      res.status(400).send(err);
+    }
+  });
+
+proRouter.delete('/:id',async(req,res)=>{
+    let id=req.params.id;
+   
+    try{
+        await ProModel.findByIdAndDelete(id)
+         res.status(200).send({"msg":"product deleted "})
     }catch(err){
         res.status(400).send(err)
     }    
