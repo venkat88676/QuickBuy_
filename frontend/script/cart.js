@@ -1,6 +1,6 @@
 function getCart() {
     console.log("inside cart");
-    fetch("https://vast-plum-moth-gown.cyclic.app/cart", {
+    fetch("http://localhost:8800/cart", {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -37,7 +37,7 @@ function getCart() {
           inc.addEventListener("click", () => {            
             res[i].quantity=res[i].quantity+1
             let payload={quantity:res[i].quantity}
-            fetch(`https://vast-plum-moth-gown.cyclic.app/cart/update/${res[i]._id}`, {
+            fetch(`http://localhost:8800/cart/update/${res[i]._id}`, {
               method: "PATCH",
               headers: {
                 "Content-type": "application/json",
@@ -62,7 +62,7 @@ function getCart() {
           dec.addEventListener("click", () => {
             res[i].quantity=res[i].quantity-1
             let payload={quantity:res[i].quantity}
-            fetch(`https://vast-plum-moth-gown.cyclic.app/cart/update/${res[i]._id}`, {
+            fetch(`http://localhost:8800/cart/update/${res[i]._id}`, {
               method: "PATCH",
               headers: {
                 "Content-type": "application/json",
@@ -90,7 +90,7 @@ function getCart() {
           AmtDiv.append(text)
 
           remove.addEventListener("click", () => {
-            fetch(`https://vast-plum-moth-gown.cyclic.app/cart/delete/${res[i]._id}`, {
+            fetch(`http://localhost:8800/cart/delete/${res[i]._id}`, {
               method: "DELETE",
               headers: {
                 "Content-type": "application/json",

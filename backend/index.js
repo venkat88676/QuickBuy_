@@ -15,8 +15,7 @@ app.use(express.json());
 
 app.use('/users',userRouter);
 app.use('/products',proRouter)
-app.use(authenticate)
-app.use('/cart',cartRouter)
+app.use('/cart',authenticate,cartRouter)
 
 app.listen(process.env.port,async()=>{
     try{

@@ -52,7 +52,7 @@ function display(pdata) {
   });
 }
 
-let userAPI="https://63fa6880897af748dcceaeb0.mockapi.io/users"
+let userAPI="http://localhost:8800/users"
 let tuser = document.querySelector(".tuser");
 
 

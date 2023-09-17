@@ -32,7 +32,9 @@
           <input type="text" id="emailLog" placeholder="Enter Email" />
           <input type="password" id="passLog" placeholder="Enter Password" />
           <button onclick="onSignIn()">Sign In</button>
+          <button onclick="adminSignin()">SignIn As Admin</button>
           <h3>OR</h3>
+
           <button onclick="register()">Create New Account</button>
         </div>
         <!-- registeration part -->
@@ -60,10 +62,10 @@
       <nav>
         <div class="leftMenu">
           <img id="logo" src="./images/logo.png" alt="" />
-          <div class="menuIcon">
+          <!-- <div class="menuIcon">
             <ion-icon name="menu"></ion-icon>
             <p>Menu</p>
-          </div>
+          </div> -->
           <div class="search" style="display: flex">
             <div>
               <input type="text" placeholder="How Can We Help You Today..." />
@@ -71,20 +73,29 @@
             <div><ion-icon name="search-outline"></ion-icon></div>
           </div>
         </div>
-        <div class="rightMenu">
-          <div onclick="activate()" id="person">
-            <ion-icon name="person-outline"></ion-icon>
+        <div class="rightMenu">          
+          <div class="dropdown" id="userDetails"> 
+            <div class="dropdown-btn"> <ion-icon name="person-circle-outline"></ion-icon></div>           
+            <div class="dropdown-content">
+                <div> <a href=""><p id="username">username</p></a></div>
+                <div> <a href="./cart.html"><p>wishlist</p></a></div>
+                <!-- <div> <p onclick="localStorage.clear();" class="logoutBtn">logout</p></div>               -->
+            </div>
           </div>
-
-          <a href="./cart.html"><ion-icon name="cart-outline"></ion-icon></a>
-        </div>
+          <div onclick="activate()" id="person">
+            <button id="checkInOutBtn" class="btn">Login/Register</button>
+          </div>
+          <div> 
+            <button onclick="logoutFun()" id="logoutBtn" class="btn">Logout</button>
+          </div>  
+        
       </nav>
       <div class="mainMenu">
         <ul>
           <li>Top Deals</li>
           <li>Deal of the Day</li>
           <li>Total Tech Membership</li>
-          <a href="./products.html"><li>View All ></li></a>
+          <a href="./products.html"><button class="btn">View all ></button></a>
           <li>Recently Viewed</li>
           <li>Order Status</li>
           <li>Saved Items</li>

@@ -29,7 +29,7 @@ let signIn = document.querySelector(".signIn");
     let age=document.getElementById('age').value;
     let city=document.getElementById('city').value;
     let payload={name,email,password,gender,age,city}
-    fetch("https://vast-plum-moth-gown.cyclic.app/users/register",{
+    fetch("http://localhost:8800/users/register",{
         method:"POST",
         headers:{
             "Content-type":"application/json"
@@ -51,7 +51,7 @@ let signIn = document.querySelector(".signIn");
         password:document.getElementById("passLog").value
     }
     console.log(payload)
-    fetch("https://vast-plum-moth-gown.cyclic.app/users/login",{
+    fetch("http://localhost:8800/users/login",{
         method:"POST",
         headers:{
             "Content-type":"application/json"
@@ -61,7 +61,9 @@ let signIn = document.querySelector(".signIn");
     .then(res=>{
         if(res.token){
           alert("Login Successful")
-        localStorage.setItem("token",res.token)
+          window.location.href="./index.html"
+          localStorage.setItem("username",res.username)          
+          localStorage.setItem("token",res.token)
         }
         else{
           alert("Wrong Credential")
@@ -71,3 +73,33 @@ let signIn = document.querySelector(".signIn");
       
       console.log(err)})
   }
+
+// login valiidation to print name----->
+
+let checkInOutBtn=document.getElementById("checkInOutBtn")
+let userDetails=document.getElementById("userDetails")
+let usernameTag=document.getElementById("username")
+let logoutBtn=document.getElementById("logoutBtn")
+
+ function checkLogin(){
+  let username=localStorage.getItem("username");
+  if(username){
+    checkInOutBtn.style.display="none"
+    userDetails.style.display="block"
+    logoutBtn.style.display="block"
+    usernameTag.innerText=username
+  }else{
+
+    userDetails.style.display="none"
+    checkInOutBtn.style.display="block"
+    logoutBtn.style.display="none"
+  }
+ }
+ checkLogin()
+
+//  logout function 
+function logoutFun(){
+  alert("Logout Successfully")
+  localStorage.clear();
+  window.location.href="./index.html"
+}

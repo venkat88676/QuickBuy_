@@ -15,12 +15,13 @@ proRouter.get('/',async(req,res)=>{
     if(name){
         filter.name=new RegExp(name, 'i');
     }
-    let skip
+    let skip=0,limit=0
     if(page){
-        skip=(page-1)*9
+        skip=(page-1)*9;
+        limit=9
     }
     try{
-        let products=await ProModel.find(filter).skip(skip).limit(15);
+        let products=await ProModel.find(filter).skip(skip).limit(limit);
         res.send(products)
     }catch(err){
         console.log(err)
