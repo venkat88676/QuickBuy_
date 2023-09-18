@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="leftMenu">
+          <img id="logo" src="./images/logo.png" alt="" />
+          <!-- <div class="menuIcon">
+            <ion-icon name="menu"></ion-icon>
+            <p>Menu</p>
+          </div> -->
+          <div class="search" style="display: flex">
+            <div>
+              <input type="text" placeholder="How Can We Help You Today..." />
+            </div>
+            <div><ion-icon name="search-outline"></ion-icon></div>
+          </div>
+        </div>
+        <div class="rightMenu">          
+          <div class="dropdown" id="userDetails"> 
+            <div class="dropdown-btn"> <ion-icon name="person-circle-outline"></ion-icon></div>           
+            <div class="dropdown-content">
+                <div> <a href=""><p id="username">username</p></a></div>
+                <div> <a href="./cart.html"><p>wishlist</p></a></div>
+                <!-- <div> <p onclick="localStorage.clear();" class="logoutBtn">logout</p></div>               -->
+            </div>
+          </div>
+          <div onclick="activate()" id="person">
+            <a href="./signin.html"><button id="checkInOutBtn" class="btn">Login/Register</button></a>
+          </div>
+          <div> 
+            <button onclick="logoutFun()" id="logoutBtn" class="btn">Logout</button>
+          </div>  
+        
+      </nav>
+</body>
+</html>
+
+<script src="./script/homePage.js"></script>

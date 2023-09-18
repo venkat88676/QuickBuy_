@@ -1,0 +1,94 @@
+.signin-cart {
+  box-shadow: rgba(74, 138, 210, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  width: 35%;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+#oAuthlogo img {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 25px;
+}
+#oAuthlogo img:hover {
+  background-color: #c7d5d5e0;
+  border-radius: 100px;
+  /* padding: 2px; */
+}
+.signin-cart input {
+  width: 85%;
+  border: none;
+  border-bottom: 0.2px solid rgba(78, 73, 73, 0.775);
+  margin: 10px;
+  /* align-items:; */
+  padding: 10px;
+}
+.signin-cart input:nth-child(1) {
+  margin-top: 60px;
+}
+#form-login {
+  display: flex;
+}
+#login,
+#signin,
+#admin {
+  max-width: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: max-width 0.8s;
+}
+#login.activate,
+#signin.activate,
+#admin.activate {
+  max-width: 500px;
+}
+
+#toggle-buttons button {
+  margin-right: 10px;
+  padding: 8px;
+  font-weight: bold;
+  border: none;
+  background-color: #8c939b;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#toggle-buttons button.active {
+  background-color: #3498db; 
+  color: white;
+}
+
+#eyeIcon {
+  position: relative;
+  /* left: 60%; */
+  top: -10%;
+  left: 35%;
+}
+#eyeIcon ion-icon {
+  font-size: large;
+  color: rgb(118, 110, 110);
+}
+.signInBtn {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #3592fc, #1edbd7);
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  color: #fff;
+}
+#or {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  border-top: 0.2px solid #9c9797;
+}

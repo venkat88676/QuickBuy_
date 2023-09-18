@@ -13,13 +13,14 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- css file -->
     <link rel="stylesheet" href="./style/index.css" />
     
   </head>
   <body>
-    <div class="popup">
-        <!-- signin part -->
+    <!-- <div class="popup">
+       
         <div class="signIn">
           <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
           <h2>Sign In to Buy Here</h2> 
@@ -27,18 +28,18 @@
             <ion-icon name="logo-facebook"></ion-icon>
             <ion-icon name="logo-twitter"></ion-icon>
             <ion-icon name="logo-google"></ion-icon>
+            <p>create new account</p>
           </div>        
 
           <input type="text" id="emailLog" placeholder="Enter Email" />
           <input type="password" id="passLog" placeholder="Enter Password" />
           <button onclick="onSignIn()">Sign In</button>
-          <!-- <input  style="display: none;" type="number" id="otp" placeholder="Enter OTP"> -->
+          
           <button onclick="adminSignin()">SignIn As Admin</button>
           <h3>OR</h3>
-
-          <button onclick="register()">Create New Account</button>
+          <button id="googleBtn">SignIn with Google</button>
         </div>
-        <!-- registeration part -->
+        
         <div class="register">
           <ion-icon id="prev" onclick="prev()" name="return-up-back-outline"></ion-icon>
           <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
@@ -56,41 +57,11 @@
           <input id="city" type="text" placeholder="City" />
           <button onclick="onRegister()">Register</button>
         </div>
-      </div>
+    </div> -->
 
       <!-- Main Body -->
     <div class="container">
-      <nav>
-        <div class="leftMenu">
-          <img id="logo" src="./images/logo.png" alt="" />
-          <!-- <div class="menuIcon">
-            <ion-icon name="menu"></ion-icon>
-            <p>Menu</p>
-          </div> -->
-          <div class="search" style="display: flex">
-            <div>
-              <input type="text" placeholder="How Can We Help You Today..." />
-            </div>
-            <div><ion-icon name="search-outline"></ion-icon></div>
-          </div>
-        </div>
-        <div class="rightMenu">          
-          <div class="dropdown" id="userDetails"> 
-            <div class="dropdown-btn"> <ion-icon name="person-circle-outline"></ion-icon></div>           
-            <div class="dropdown-content">
-                <div> <a href=""><p id="username">username</p></a></div>
-                <div> <a href="./cart.html"><p>wishlist</p></a></div>
-                <!-- <div> <p onclick="localStorage.clear();" class="logoutBtn">logout</p></div>               -->
-            </div>
-          </div>
-          <div onclick="activate()" id="person">
-            <button id="checkInOutBtn" class="btn">Login/Register</button>
-          </div>
-          <div> 
-            <button onclick="logoutFun()" id="logoutBtn" class="btn">Logout</button>
-          </div>  
-        
-      </nav>
+      <header></header>
       <div class="mainMenu">
         <ul>
           <li>Top Deals</li>
@@ -223,60 +194,7 @@
           </div>
         </div>
         <!-- footer part -->
-        <footer>
-          <div>
-            <img src="./images/pic3.png" alt="" />
-            <img src="./images/pic4.png" alt="" />
-            <img src="./images/pic5.png" alt="" />
-            <img src="./images/pic6.png" alt="" />
-          </div>
-          <div>
-            <div>
-              <h3>Order & purchase</h3>
-              <p>Check Order status</p>
-              <p>Shipping,Delivery</p>
-              <p>Price Match Guarntee</p>
-              <p>Products Recalls</p>
-              <p>Gift Cards</p>
-              <h3>Payment Options</h3>
-              <p>My Best Buy credit card</p>
-              <p>Pay Your Bill</p>
-              <p>Lease to Own</p>
-            </div>
-            <div>
-              <h3>Support &Services</h3>
-              <p>Shop with an Expert</p>
-              <p>Schedule a service</p>
-              <p>Manage an appoints</p>
-              <p>contact Us</p>
-              <h3>Rewards & Membership</h3>
-              <p>Best Buy Totaltech</p>
-              <p>My Best buy</p>
-              <p>View points & certificates</p>
-              <p>Member Offers</p>
-            </div>
-            <div>
-              <h3>Partnership</h3>
-              <p>Affiliate Program</p>
-              <p>Advertise with us</p>
-              <p>Developers</p>
-              <p>Best buy Health</p>
-              <p>Best buy Education</p>
-              <h3>About Best Buy</h3>
-              <p>corporate information</p>
-              <p>careers</p>
-              <p>corporate Responsability</p>
-              <p>Discover & Learn</p>
-            </div>
-            <div class="socialmedia">
-              <ion-icon name="logo-facebook"></ion-icon>
-              <ion-icon name="logo-linkedin"></ion-icon>
-              <ion-icon name="logo-youtube"></ion-icon>
-              <ion-icon name="logo-twitter"></ion-icon>
-              <ion-icon name="logo-instagram"></ion-icon>
-            </div>
-          </div>
-        </footer>
+       <footer></footer>
       </div>
     </div>
     
@@ -284,3 +202,14 @@
 </html>
 <!-- script file -->
 <script src="./script/homePage.js"></script>
+
+<script>
+  $(function () {
+      $('header').load('navbar.html');
+  }) 
+</script>
+<script>
+  $(function () {
+      $('footer').load('footer.html');
+  }) 
+</script>

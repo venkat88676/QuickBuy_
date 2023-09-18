@@ -1,10 +1,15 @@
 const express=require("express")
 const bcrypt = require('bcrypt');
 const jwt=require("jsonwebtoken")
-const {validate}=require("../middleware/validate")
 
+const {validate}=require("../middleware/validate")
 const {UserModel}=require('../model/userModel')
+const {passport}=require("../config/google.auth")
 const userRouter=express.Router();
+
+userRouter.get("/",(req,res)=>{
+    res.send("user route")
+})
 
 userRouter.post('/login',async(req,res)=>{
     try{
@@ -44,5 +49,20 @@ userRouter.post('/register',validate,async(req,res)=>{
         res.status(400).send({msg:err.message})
     }
 })
+
+// ---------google auth--------
+
+userRouter.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email'] }));
+
+userRouter.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login',session:false }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    console.log(req.user);
+    let token=jwt.sign({userId:req.user._id},'masai')
+    res.status(200).send({"msg":"Login Successfully","token":token,"user":res.user})   
+  });
+
 
 module.exports={userRouter}
