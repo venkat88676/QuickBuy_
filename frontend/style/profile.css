@@ -3,9 +3,9 @@
 #profile-container {
     padding: 10px;
     position: relative;
-    width: 50%;
+    width: 40%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 8%;
     /* top: 40%; */
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 10px;
@@ -14,17 +14,17 @@
 #profile-container input, #profile-container select {
     width: 100%;
     border: none;
-    border-bottom: solid #00A1E0;
+    border-bottom: 0.4px solid #6b6f71;
     text-align: center;
     color: black;
     font-weight: bold;
 }
 
 #profile-container button {
-    width: 50%;
+    width: 35%;
     display: block;
     margin: 20px auto;
-    padding: 5px 15px;
+    padding: 5px;
     border: none;
     border-radius: 10px;
     background-color: #00A1E0;
@@ -34,8 +34,8 @@
 
 #profile-container button:hover {
     background-color: transparent;
-    border: 1px solid blue;
-    color: blue;
+    border: 1px solid #36464d;
+    color:#213942;
     font-weight: bolder;
 }
 
@@ -71,12 +71,6 @@
 }
 
 
-
-
-
-
-
-
  /* CSSS- while TEsting  */
 
 button {
@@ -86,7 +80,7 @@ button {
 #login-user-name{
     color: white;
     position: absolute;
-    top: 18%;
+    top: 25%;
     left: 0%;
     margin: auto;
     display: block;

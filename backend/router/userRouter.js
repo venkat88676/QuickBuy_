@@ -7,8 +7,13 @@ const {UserModel}=require('../model/userModel')
 const {passport}=require("../config/google.auth")
 const userRouter=express.Router();
 
-userRouter.get("/",(req,res)=>{
-    res.send("user route")
+userRouter.get("/",async(req,res)=>{
+    try{
+        const user=await UserModel.find()
+        res.send(user)
+    }catch(err){
+        res.send(err)
+    }
 })
 
 userRouter.post('/login',async(req,res)=>{
@@ -50,26 +55,26 @@ userRouter.post('/register',validate,async(req,res)=>{
     }
 })
 
-userRouter.patch('/:id', async (req, res) => {
+userRouter.patch('/update/:id', async (req, res) => {
     const id = req.params.id;
     const payload = req.body;
-    console.log(payload, id);
+    // console.log(payload, id);
     try {
       await UserModel.findByIdAndUpdate(id, payload);
-      res.status(200).send({ "msg": "user updated" });
+      let user= await UserModel.findOne({_id:id})
+      res.status(200).send({ "msg": "user updated" ,user});
     } catch (err) {
       res.status(400).send(err);
     }
   });
 
-userRouter.delete('/:id',async(req,res)=>{
-    let id=req.params.id;
-   
+userRouter.delete('/delete/:id',async(req,res)=>{
+    let id=req.params.id;   
     try{
         await UserModel.findByIdAndDelete(id)
-         res.status(200).send({"msg":"user deleted "})
+         res.status(200).send({success:true,error:false})
     }catch(err){
-        res.status(400).send(err)
+        res.status(400).send({success:false,error:true})
     }    
 })
 
