@@ -55,10 +55,11 @@ document.getElementById("login").addEventListener("submit",(e)=>{
       })
         .then((res) => res.json())
         .then((res) => {
+          console.log("data login",res.usedetails)
           if (res.token) {
             alert("Login Successful");
             window.location.href = "./index.html";
-            localStorage.setItem("username", res.username);
+            localStorage.setItem("userdetails",JSON.stringify(res.usedetails))
             localStorage.setItem("token", res.token);
           } else {
             alert("Wrong Credential");
@@ -122,7 +123,7 @@ document.getElementById("admin").addEventListener("submit",(e)=>{
           if (res.token && inputOtp === "1234") {
             alert("Login Successful As Admin");
             window.location.href = "./admin.html";
-            localStorage.setItem("username", res.username);
+            localStorage.setItem("userdetails",JSON.stringify(res.usedetails))
             localStorage.setItem("token", res.token);
           } else {
             alert("Wrong Credential");

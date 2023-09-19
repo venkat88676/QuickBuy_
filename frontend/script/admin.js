@@ -1,3 +1,5 @@
+const basicUrl=`http://localhost:8800`
+
 let menu = document.querySelector(".menu");
 let left = document.querySelector(".left");
 let right = document.querySelector(".right");
@@ -8,10 +10,10 @@ menu.addEventListener("click", () => {
   table11.classList.toggle("active");
 });
 
-const api = "http://localhost:8800/products";
+// const api = "http://localhost:8800/products";
 fetchData();
 function fetchData() {
-  fetch(api)
+  fetch(`${basicUrl}/products`)
     .then((req) => req.json())
     .then((data) => {
       console.log(data);
@@ -52,13 +54,13 @@ function display(pdata) {
   });
 }
 
-let userAPI="http://localhost:8800/users"
+// let userAPI="http://localhost:8800/users"
 let tuser = document.querySelector(".tuser");
 
 
 fetchUser();
 function fetchUser() {
-    fetch(userAPI)
+    fetch(`${basicUrl}/users`)
       .then((req) => req.json())
       .then((data) => {
         console.log(data);

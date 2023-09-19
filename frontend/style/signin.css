@@ -3,6 +3,7 @@
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   width: 35%;
+  height: 500px;
   border-radius: 10px;
   margin: auto;
   margin-top: 40px;
@@ -29,7 +30,7 @@
   padding: 10px;
 }
 .signin-cart input:nth-child(1) {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 #form-login {
   display: flex;
@@ -75,7 +76,6 @@
 }
 .signInBtn {
   cursor: pointer;
-  display: block;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -86,6 +86,24 @@
   border: none;
   width: 40%;
   color: #fff;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+}
+.signInBtn:hover,#oAuthlogo.signInBtn:hover{
+  background-image:none;
+  /* background-color: #d9e1e4; */
+  color: #373839;
+  border: 0.3px solid black;
+  text-align: center;
+  
+}
+#oAuthlogo.signInBtn{
+  background-image: linear-gradient(to right, #373839, #6a7c7b);
+}
+#oAuthlogo ion-icon{
+  font-size: 25px;
+  margin-right: 8px;
 }
 #or {
   width: 50%;
