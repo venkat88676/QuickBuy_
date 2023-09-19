@@ -1,3 +1,5 @@
+
+
 let BaseUrl=`http://localhost:8800`
 
 let loginToggle = document.getElementById("loginToggle");
@@ -116,7 +118,7 @@ document.getElementById("admin").addEventListener("submit",(e)=>{
         .then((res) => res.json())
         .then((res) => {
           const inputOtp = prompt("Enter security key for Admin verification");
-          console.log(typeof inputOtp);
+          console.log(payload,res);
           if (res.token && inputOtp === "1234") {
             alert("Login Successful As Admin");
             window.location.href = "./admin.html";
@@ -139,12 +141,16 @@ document.getElementById("admin").addEventListener("submit",(e)=>{
 let googleBtn = document.getElementById("oAuthlogo");
 
 googleBtn.addEventListener("click", function (e) {
+  console.log("click");
   e.preventDefault();
   document.getElementById(
-    "googleBtn"
+    "oAuthlogo"
   ).innerHTML = `<i class="fa fa-refresh fa-spin"></i> Google`;
+
+  // Redirect to Google OAuth authentication URL
   window.location.href = `${BaseUrl}/users/auth/google`;
 });
+
 
 
 

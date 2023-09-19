@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/favicon1.png">
+    <title>profile</title>
+     <!-- jquery  -->
+     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!---------Icons Import-----  -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="./style/profile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    
+    <header></header>
+    <!-- ---------------Content On Profile Page--------------- -->
+
+    <div id="profile-container">
+        <div id="img-container">
+            <div id="profile-pic">
+                <img src="https://img.freepik.com/premium-vector/man-profile-cartoon_18591-58482.jpg?w=900" alt="">
+            </div>
+            <div id="backgroung-img">
+                <img src="https://img.freepik.com/free-photo/black-plain-concrete-textured_53876-95561.jpg"
+                    alt="">
+            </div>
+            <div>
+                <h2 id="login-user-name"></h2>
+            </div>
+        </div>
+        <div>
+            <form>
+
+                
+                <label for="email">Name:</label>
+                <input type="email" id="login-user-name-input" ><br>
+                <label for="address">city:</label>
+                <input type="text" id="login-user-address" ><br>              
+                
+                <label for="gender">Gender:</label>
+                <select id="login-user-gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="role">Age:</label>
+                <input type="number" id="login-user-age" ><br>
+
+                <label for="email">Email ID:</label>
+                <input type="email" id="login-user-email" disabled style="color: rgb(6, 147, 234);"><br>
+
+                <!-- <input type="submit" value="Submit"> -->
+                
+            </form>
+            <div>
+                <button id="user-profile-updateBtn" onclick="updateProfile()">Update Profile</button>
+
+                <button id="user-profile-updatePassword" onclick="forgotPasswordBtnProfile()"> Change Password</button>
+
+                <button id="user-profile-deleteBtn" onclick="deleteProfile()">Delete My Account</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-------------Footer-------------  -->
+    <footer></footer>
+    
+</body>
+
+</html>
+
+
+<script src="./script/profile.js"></script>
+
+<!-- <script src="../Scripts/navbar.js"></script> -->
+
+<script>
+    $(function () {
+        $('header').load('navbar.html');
+    }) 
+  </script>
+  <script>
+    $(function () {
+        $('footer').load('footer.html');
+    }) 
+  </script>

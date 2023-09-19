@@ -74,6 +74,7 @@
   color: rgb(118, 110, 110);
 }
 .signInBtn {
+  cursor: pointer;
   display: block;
   margin: auto;
   margin-top: 20px;

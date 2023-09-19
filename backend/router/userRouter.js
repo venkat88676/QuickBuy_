@@ -50,6 +50,40 @@ userRouter.post('/register',validate,async(req,res)=>{
     }
 })
 
+userRouter.patch('/:id', async (req, res) => {
+    const id = req.params.id;
+    const payload = req.body;
+    console.log(payload, id);
+    try {
+      await UserModel.findByIdAndUpdate(id, payload);
+      res.status(200).send({ "msg": "user updated" });
+    } catch (err) {
+      res.status(400).send(err);
+    }
+  });
+
+userRouter.delete('/:id',async(req,res)=>{
+    let id=req.params.id;
+   
+    try{
+        await UserModel.findByIdAndDelete(id)
+         res.status(200).send({"msg":"user deleted "})
+    }catch(err){
+        res.status(400).send(err)
+    }    
+})
+
+userRouter.get("/getdata", async(req,res)=>{
+    try {
+        let {_id}=req.query       
+        let user=await UserModel.findOne({_id})
+        res.send({"userdetails":user})
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 // ---------google auth--------
 
 userRouter.get('/auth/google',
@@ -59,9 +93,17 @@ userRouter.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login',session:false }),
   function(req, res) {
     // Successful authentication, redirect home.
-    console.log(req.user);
-    let token=jwt.sign({userId:req.user._id},'masai')
-    res.status(200).send({"msg":"Login Successfully","token":token,"user":res.user})   
+    console.log("userroute",req.user)
+    const user=req.user
+    let token=jwt.sign({userId:user._id},'masai')   
+    // res.redirect(` http://127.0.0.1:5500/frontend/index.html?userid=${user._id}`);
+    
+    res.send(`<a href="http://127.0.0.1:5500/frontend/index.html?userid=${user._id}" id="myid">Loding...🕧</a>
+    <script>
+        let a = document.getElementById('myid')
+        a.click()
+        console.log(a)
+    </script>`)  
   });
 
 

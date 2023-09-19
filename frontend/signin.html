@@ -1,83 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bestbuy - Sign Up</title>
     <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="./style/signin.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style/signin.css" />
+  </head>
+  <body>
     <header></header>
-    <br><br><br><br>
+    <br /><br /><br /><br />
     <div class="signin-container">
-        <div class="signin-cart">
-            <div id="toggle-buttons">
-                <button id="loginToggle" class="active">Login</button>
-                <button id="signinToggle">Sign Up</button>
-                <button id="adminToggle">Admin</button>
+      <div class="signin-cart">
+        <div id="toggle-buttons">
+          <button id="loginToggle" class="active">Login</button>
+          <button id="signinToggle">Sign Up</button>
+          <button id="adminToggle">Admin</button>
+        </div>
+
+        <div id="form-login">
+          <form id="login" class="activate">
+            <input id="emailLog" type="email" required placeholder="Email ID" />
+            <input
+              id="passLog"
+              type="password"
+              required
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+            <div id="eyeIcon" onclick="togglePasswordVisibility()">
+              <ion-icon name="eye-outline"></ion-icon>
             </div>
-        
-      
-          <div id="form-login">
+            <button type="submit" class="signInBtn" id="loginBtn">Login</button>
+            <p id="or">OR</p>
+            <div >
+              <button id="oAuthlogo" class="signInBtn">
+                <img src="./images/google.png" alt="google_logo" /> Google
+              </button>
+            </div>
+          </form>
 
-            <form id="login" class="activate">
-                <input id="emailLog" type="email" required placeholder="Email ID" />
-                <input id="passLog" type="password" required placeholder="Password" />
-                <div id="eyeIcon" onclick="togglePasswordVisibility()">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>      
-                <button type="submit" class="signInBtn" id="loginBtn">Login</button>
-                <p id="or">OR</p>
-                <div id="oAuthlogo">
-                  <img src="./images/google.png" alt="google_logo" />                
-                </div>            
-            </form>
+          <form id="admin" class="">
+            <input
+              id="adminEmail"
+              type="email"
+              required
+              placeholder="Email ID"
+            />
+            <input
+              id="adminPass"
+              type="password"
+              required
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+            <div id="eyeIcon" onclick="togglePasswordVisibility()">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <button class="signInBtn" type="submit" id="adminBtn">
+              Login As Admin
+            </button>
+          </form>
 
-            <form id="admin" class="">
-                <input id="adminEmail" type="email" required placeholder="Email ID" />
-                <input id="adminPass" type="password" required placeholder="Password" />
-                <div id="eyeIcon" onclick="togglePasswordVisibility()">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>        
-                <button class="signInBtn" type="submit" id="adminBtn">Login As Admin</button>               
-            </form>
-
-            <form id="signin">
-              <input id="name" type="text" required placeholder="Full Name" />
-              <input id="email" type="text" required placeholder="Email Id" />
-              <input id="age" type="number" required placeholder="Age" />
-              <input id="city" type="text" required placeholder="City">
-              <select  id="gender">
-                <option value="">Gender</option>
-                <option value="male">male</option>
-                <option value="female">female</option>
-                <option value="others">others</option>
-              </select>
-              <input id="password" type="password" required placeholder="Password" />
-              <div id="eyeIcon">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-              <button class="signInBtn" type="submit" id="signIn">Sign In</button>
-            </form>
-          </div>
+          <form id="signin">
+            <input id="name" type="text" required placeholder="Full Name" />
+            <input id="email" type="text" required placeholder="Email Id" />
+            <input id="age" type="number" required placeholder="Age" />
+            <input id="city" type="text" required placeholder="City" />
+            <select id="gender">
+              <option value="">Gender</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="others">others</option>
+            </select>
+            <input
+              id="password"
+              type="password"
+              required
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+            <div id="eyeIcon">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <button class="signInBtn" type="submit" id="signIn">Sign In</button>
+          </form>
         </div>
       </div>
-</body>
+    </div>
+  </body>
 </html>
 
 <script>
-    $(function () {
-        $('header').load('navbar.html');
-    }) 
-  </script>
-  <script src="./script/signin.js"></script>
+  $(function () {
+    $("header").load("navbar.html");
+  });
+</script>
+<script src="./script/signin.js"></script>
+

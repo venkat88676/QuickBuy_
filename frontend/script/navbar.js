@@ -1,28 +1,30 @@
 
+let BaseUrl=`http://localhost:8800`
 
-let signIn = document.querySelector(".signIn");
-let container = document.querySelector(".container");
-function activate() {
-  container.classList.add("activate");
-  signIn.classList.add("activate");
-}
-function remove() {
-  container.classList.remove("activate");
-  signIn.classList.remove("activate");
-  registerBtn.classList.remove("activate");
-}
-let registerBtn = document.querySelector(".register");
-function register() {
-  registerBtn.classList.add("activate");
-  signIn.classList.remove("activate");
-}
-function prev() {
-  console.log("prev");
-  signIn.classList.add("activate");
-  registerBtn.classList.remove("activate");
+let params = new URLSearchParams(window.location.search);
+    console.log("params",params)
+let userId=params.get('userid');
+
+console.log("userid",userId)
+
+let obj={
+    _id:userId
 }
 
-
+if(userId){
+    fetch(`${BaseUrl}/users/getdata/?_id=${userId}`)
+    .then((res)=>{
+        return res.json()
+    })
+    .then((data)=>{
+      console.log(data.userdetails)
+        localStorage.setItem("userdetails",JSON.stringify(data.userdetails))
+        
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}
 
 // login valiidation to print name----->
 
@@ -32,12 +34,13 @@ let usernameTag = document.getElementById("username");
 let logoutBtn = document.getElementById("logoutBtn");
 
 function checkLogin() {
-  let username = localStorage.getItem("username");
-  if (username) {
+  let userdetails = JSON.parse(localStorage.getItem("userdetails")); 
+  
+  if (userdetails) {
     checkInOutBtn.style.display = "none";
     userDetails.style.display = "block";
     logoutBtn.style.display = "block";
-    usernameTag.innerText = username;
+    usernameTag.innerText = userdetails.name.split(" ")[0];
   } else {
     userDetails.style.display = "none";
     checkInOutBtn.style.display = "block";
