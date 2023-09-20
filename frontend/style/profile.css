@@ -1,4 +1,12 @@
 /* profile-page css */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=PT+Sans&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+}
 
 #profile-container {
     padding: 10px;

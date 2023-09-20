@@ -94,6 +94,7 @@ document.getElementById("signin").addEventListener("submit",(e)=>{
     .then((res) => {
       console.log(res);
       alert("Registered Successfully");
+      location.href="./signin.html"
     })
     .catch((err) => {
       alert("Please Fill all the column");
@@ -146,7 +147,7 @@ googleBtn.addEventListener("click", function (e) {
   e.preventDefault();
   document.getElementById(
     "oAuthlogo"
-  ).innerHTML = `<i class="fa fa-refresh fa-spin"></i> Google`;
+  ).innerHTML = `<i style="color:#3592fc" class="fa fa-refresh fa-spin"></i> Google`;
 
   // Redirect to Google OAuth authentication URL
   window.location.href = `${BaseUrl}/users/auth/google`;

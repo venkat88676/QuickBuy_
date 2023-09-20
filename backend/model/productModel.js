@@ -5,7 +5,7 @@ const proSchema=mongoose.Schema({
     price:Number,
     category:String,
     image:String,
-    rating:Number
+    rating:Number,
 },{
     versionKey:false
 })

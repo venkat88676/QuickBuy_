@@ -1,15 +1,10 @@
 
 let BaseUrl=`http://localhost:8800`
 
+// get userId from url given by google auth--->
+
 let params = new URLSearchParams(window.location.search);
-    console.log("params",params)
 let userId=params.get('userid');
-
-console.log("userid",userId)
-
-let obj={
-    _id:userId
-}
 
 if(userId){
     fetch(`${BaseUrl}/users/getdata/?_id=${userId}`)
@@ -25,6 +20,29 @@ if(userId){
         console.log(err)
     })
 }
+
+// search function---->
+let searchTimer
+function searchItem(search){
+  console.log(search)
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    window.location.href = `products.html?q=${search}`;
+  }, 1000);
+ 
+}
+
+let searchInput=document.getElementById("searchInput")
+searchInput.value=localStorage.getItem("searchItem")||""
+searchInput.addEventListener("input",()=>{
+  let query=searchInput.value
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    window.location.href = `products.html?q=${query}`;
+    localStorage.setItem("searchItem",query)
+  }, 1000);
+})
+
 
 // login valiidation to print name----->
 
@@ -47,13 +65,13 @@ function checkLogin() {
     logoutBtn.style.display = "none";
   }
 }
-checkLogin();
+setTimeout(checkLogin(),2000) ;
 
 //  logout function
 function logoutFun() {
   let res=window.confirm("Do you want to logout?");
   if(res){
-    alert("Logout Successfully");
+    // alert("Logout Successfully");
   localStorage.clear();
   window.location.href = "./index.html";
   }

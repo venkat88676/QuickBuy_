@@ -3,8 +3,8 @@ const express=require('express')
 const proRouter=express.Router();
 
 proRouter.get('/',async(req,res)=>{
-    let {category,rating,name,page}=req.query
-    console.log(category)
+    let {category,rating,search,page}=req.query
+    console.log("cate",category,rating,page)
     let filter={}
     if(category){
         filter.category=category
@@ -12,13 +12,13 @@ proRouter.get('/',async(req,res)=>{
     if(rating){
         filter.rating={$gt:rating}
     }
-    if(name){
-        filter.name=new RegExp(name, 'i');
+    if(search){
+        filter.name=new RegExp(search, 'i');
     }
-    let skip=0,limit=0
+    let skip=0,limit=9
     if(page){
         skip=(page-1)*9;
-        limit=9
+       
     }
     try{
         let products=await ProModel.find(filter).skip(skip).limit(limit);

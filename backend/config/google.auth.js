@@ -20,7 +20,7 @@ passport.use(new GoogleStrategy({
             name:profile._json.name,
             email,            
             password:"12345678",
-            gender:"Male",
+            gender:"male",
             age:25,
             city:"Bhopal",
           })

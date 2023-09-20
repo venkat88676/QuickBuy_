@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=PT+Sans&display=swap");
+
+#logo{
+    width: 200px;
+    margin: 8px;
+}
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    box-sizing: border-box; 
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#navbar{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0px;
+}
+
+
+#upperNav{         
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#ffffff;
+    font-size: 30px;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+#rightNav{
+    display: flex;
+    justify-content:space-evenly;
+    /* border: solid red; */
+    width: 15%;
+}
+
+.btn{
+    cursor: pointer;
+    color: #ffffff;
+    padding: 8px;
+    font-size:18px;
+    /* margin-left: 20px; */
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    background-color: #1CB3C8;            
+}
+.btn:hover{
+    background-color: transparent;
+    border: .4px solid black;
+    color: black;
+}
+
+.menuIcon{
+    display: flex; 
+    align-items: center
+}
+#searchContainer{
+    display: flex;
+}
+#searchInput{
+    background-color: #dae5e6;
+    border: none;
+    width: 380px;
+    padding: 8px;
+    border-radius: 8px;
+
+}   
+#searchIcon{
+    position: absolute;
+    margin-left: -45px;
+    margin-top: 10px;
+    z-index: 1;
+    color: #7d8586;
+}   
+#menuIcon ion-icon{
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+}
+#menuIcon ion-icon:hover{
+    color: #1CB3C8;
+}
+
+#mainMenu {
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    position: relative;
+    top: -150px; /* Start position off-screen */
+    background-color: #e8eaee;
+    border-top: solid #e0e3e9;
+    padding: 5px;  
+    z-index: -1;
+    overflow: hidden;
+    transition: top 0.5s ease; /* Add a transition for the 'top' property */
+}
+
+#mainMenu.activate {
+    display: block;
+    margin-bottom: 30px;
+    top:0px;
+    /* top: 50px; End position */
+}
+ul{
+    font-weight:100;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    color: rgb(30, 30, 30);
+}
+
+/* -------------dropdown---------- */
+.dropdown-content{
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    font-size: 22px;
+    padding: 5px;
+    z-index: 10;
+    background-color: #dae5e6;
+}
+.dropdown-content a, .dropdown-content p{
+    cursor: pointer;
+    color:black;
+    font-size: 20px;
+    text-decoration: none;
+}
+.dropdown-content>div:hover{
+    background-color: #2981f3b7;
+    /* color: #ffce00; */
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+ 
+}
+.dropdown-btn ion-icon{
+    font-size: 35px;            
+    color: rgb(77, 73, 73);
+}
+/* ----end---- */

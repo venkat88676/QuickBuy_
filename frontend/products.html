@@ -16,35 +16,24 @@
   ></script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-  <!-- script file -->
-  <script src="./script/product.js"></script>
+ 
 </head>
 <body>
    
          <!-- navigation -->
         <header></header>
-        <!-- <div class="mainMenu">
-          <ul>
-            <li>Top Deals</li>
-            <li>Deal of the Day</li>
-            <li>Total Tech Membership</li>
-            <a href="./products.html"><li>View All ></li></a>
-            <li>Recently Viewed</li>
-            <li>Order Status</li>
-            <li>Saved Items</li>
-          </ul>
-        </div> -->
+       
         <!-- mainBody -->
         <div class="maincont">
           <div class="filter">
-            <select onchange="getval()" id="rating">
+            <select onchange="getval()" id="byRating">
               <option value="">Filter By Rating</option>
               <option value="4.5">Above 4.5</option>
               <option value="4">Above 4</option>
               <option value="3.5">Above 3.5</option>
               <option value="3">Above 3</option>
             </select>
-            <select onchange="getval()"  id="byType">
+            <select  onchange="getval()" id="byType">
               <option value="">Select Type</option>
               <option value="smartphone">Smartphones</option>
               <option value="laptop">Laptops</option>
@@ -53,7 +42,8 @@
             </select>
           </div>
           <div class="proContainer">
-          </div>      
+          </div>    
+          <div ><img id="loader" class="hide" src="./images/loader3.gif" alt=""></div>  
         </div>
         <div class="pageNo">
           <div onclick="get1()" id="one">1</div>
@@ -66,6 +56,9 @@
         <footer></footer>
 </body>
 </html>
+
+ <!-- script file -->
+ <script src="./script/product.js"></script>
 
 <script>
   $(function () {
