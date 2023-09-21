@@ -1,4 +1,4 @@
-const basicUrl=`http://localhost:8800`
+const basicUrl=`https://dull-coveralls-fawn.cyclic.cloud`
 
 let menu = document.querySelector(".menu");
 let left = document.querySelector(".left");

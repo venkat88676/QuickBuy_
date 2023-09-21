@@ -4,7 +4,7 @@ const proRouter=express.Router();
 
 proRouter.get('/',async(req,res)=>{
     let {category,rating,search,page}=req.query
-    console.log("cate",category,rating,page)
+    // console.log("cate",category,rating,page)
     let filter={}
     if(category){
         filter.category=category

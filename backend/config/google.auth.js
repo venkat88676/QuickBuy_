@@ -5,7 +5,7 @@ require("dotenv").config()
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8800/users/auth/google/callback"
+    callbackURL: "https://dull-coveralls-fawn.cyclic.cloud/users/auth/google/callback"
   },
   async function(accessToken, refreshToken, profile, cb) {
     try {

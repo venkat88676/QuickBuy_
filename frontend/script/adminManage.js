@@ -1,3 +1,6 @@
+
+const basicUrl=`https://dull-coveralls-fawn.cyclic.cloud`
+
 let menu = document.querySelector(".menu");
 let left = document.querySelector(".left");
 let right = document.querySelector(".right");
@@ -9,10 +12,9 @@ menu.addEventListener("click", () => {
 
 });
 
-const api = "http://localhost:8800/products";
 fetchData();
 function fetchData() {
-  fetch(api)
+  fetch(`${basicURL}/products`)
     .then((req) => req.json())
     .then((data) => {
       console.log(data);
@@ -94,7 +96,7 @@ addBtn.addEventListener("click",(e)=>{
 //update Products------------->
 function updateProd(id,name,category,price,url){
     console.log(id)
-  fetch(`${api}/${id}`,{
+  fetch(`${basicURL}/products/${id}`,{
     method:'PATCH',
     body:JSON.stringify({
       name:name,
@@ -118,7 +120,7 @@ function updateProd(id,name,category,price,url){
 
 function addProd(title,category,price,url){
    
-    fetch((api),{
+    fetch((`${basicURL}/products`),{
       method:'POST',
       body:JSON.stringify({
         title:title,
@@ -140,7 +142,7 @@ function addProd(title,category,price,url){
 // Delete function-------------->
 function delProd(id){
     console.log(id)
-  fetch(`http://localhost:8800/products/${id}`,{
+  fetch(`${basicURL}/products/${id}`,{
     method:'DELETE',
     headers:{
       'Content-type':'application/json'

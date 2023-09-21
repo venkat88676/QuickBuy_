@@ -1,4 +1,5 @@
-const basicURL = `http://localhost:8800`;
+const basicURL = `https://dull-coveralls-fawn.cyclic.cloud`;
+
 
 var category = "";
 var rating = "";
@@ -64,17 +65,24 @@ function getData() {
         btn.innerText = "Add To Cart";
 
         btn.addEventListener("click", () => {
-          console.log("cart");
-          fetch("http://localhost:8800/cart/create", {
+          btn.innerHTML=`<i style="color:#fff" class="fa fa-refresh fa-spin"></i> Adding...`
+          console.log(res[i]);
+          const token = localStorage.getItem("token");
+          if (!token) {
+            alert("Please Login First");
+            return;
+          }
+          fetch(`https://dull-coveralls-fawn.cyclic.cloud/cart/create`, {
             method: "POST",
             headers: {
               "Content-type": "application/json",
-              Authorization: localStorage.getItem("token"),
+              Authorization: token,
             },
             body: JSON.stringify(res[i]),
           })
             .then((res) => res.json())
             .then((res) => {
+              btn.innerText=`Add to cart`
               let msg=res.msg;
               if(msg.includes("duplicate key error collection")){
                 alert("Already in cart")
@@ -82,8 +90,9 @@ function getData() {
               alert(msg)
             })
             .catch((err) => {
-              alert("Please Login First");
-              console.log(err);
+              btn.innerText=`Add to cart`
+              console.error(err);
+              alert("Already in cart ");
             });
         });
         card.append(img, name,rate, price, btn);

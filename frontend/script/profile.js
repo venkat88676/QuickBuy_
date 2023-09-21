@@ -1,4 +1,4 @@
-const BaseUrl_profile = `http://localhost:8800`;
+const BaseUrl_profile = `https://dull-coveralls-fawn.cyclic.cloud`;
 
 const userDetails = localStorage.getItem("userdetails") || null;
 // console.log(qrcodeuserdetails_qrpage);
