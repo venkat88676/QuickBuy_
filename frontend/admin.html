@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="./style/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
@@ -13,7 +14,8 @@
 <body>
     
     <!-- nav part -->
-    <div class="nav">
+    <header></header>
+    <!-- <div class="nav">
         <a href="./index.html"><img id="logo" src="./images/logo.png" alt="image"></a>
         <div class="search" style="display: flex;">
             <div><input type="text" placeholder="search" ></div>
@@ -23,30 +25,28 @@
         <div class="icons">
             <i class="fa-sharp fa-regular fa-user"></i>           
         </div>
-    </div>
+    </div> -->
     <div class="main">
         <div class="left">
-            <ul>
-                <li>
-                    <a href="./admin.html">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                        <span class="title"> Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./adminManage.html">
-                        <span class="icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
-                        <span class="title">Manage Products</span> 
-                    </a>                    
-                </li>               
-                <li>
-                    <a href="./index.html">
-                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Logout</span> 
-                    </a>                    
-                </li>               
-
-            </ul>
+            <div>
+                <a href="./admin.html">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title"> Dashboard</span>
+                </a>
+            </div>
+            <div>
+                <a href="./adminManage.html">
+                    <span class="icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
+                    <span class="title">Manage Products</span> 
+                </a>  
+            </div>
+            <div>
+                <a href="./index.html">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Logout</span> 
+                </a>  
+            </div>
+            
         </div>
         <div class="right">
             <div class="menu icon">
@@ -130,3 +130,9 @@
    <script src="./script/admin.js"></script>
 </body>
 </html>
+
+  <script>
+    $(function () {
+        $('header').load('navbar.html');
+    }) 
+  </script>
