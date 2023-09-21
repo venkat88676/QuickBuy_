@@ -6,15 +6,17 @@ let BaseUrl=`http://localhost:8800`
 
 let params = new URLSearchParams(window.location.search);
 let userId=params.get('userid');
+let token=params.get('token')
 
-if(userId){
+if(userId && token){
     fetch(`${BaseUrl}/users/getdata/?_id=${userId}`)
     .then((res)=>{
         return res.json()
     })
     .then((data)=>{
       console.log(data.userdetails)
-        localStorage.setItem("userdetails",JSON.stringify(data.userdetails))
+      localStorage.setItem("userdetails",JSON.stringify(data.userdetails))
+      localStorage.setItem("token",token)
         
     })
     .catch((err)=>{

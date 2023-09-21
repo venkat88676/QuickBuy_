@@ -2,11 +2,12 @@ const express = require("express");
 const { CartModel } = require("../model/cartModel");
 const cartRouter = express.Router();
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 cartRouter.get("/", async (req, res) => {
   const token = req.headers.authorization;
   console.log(token)
-  jwt.verify(token, "masai", async (err, decoded) => {
+  jwt.verify(token, process.env.tokenSecret, async (err, decoded) => {
     console.log(decoded)
     if (decoded) {
       let userId = decoded.userId;
@@ -19,24 +20,27 @@ cartRouter.get("/", async (req, res) => {
 });
 
 cartRouter.post("/create", async (req, res) => {
-  
-  // const token = req.headers.authorization;
-  // jwt.verify(token, "masai", async (err, decoded) => {
-  //   if (decoded) {
-  //     let userId = decoded.userId;
-  //     req.body.quantity=1
-  //     const payload = req.body;
-  //     const note = new CartModel(payload,userId);
-  //     try {
-  //       await note.save();
-  //       res.send({ msg: "added" });
-  //     } catch (err) {
-  //       res.send({ msg: err.message });
-  //     }
-  //   } else {
-  //     res.send({ msg: "Please Login" });
-  //   }
-  // });
+
+  const token = req.headers.authorization;
+
+  try {
+    const decoded = jwt.verify(token, process.env.tokenSecret);
+    if (decoded) {
+      const userId = decoded.userId;
+      req.body.quantity = 1; // Set the default quantity to 1
+      const cartItem = new CartModel({
+        ...req.body,
+        userId: userId // Set the userId in the cart item
+      });
+
+      await cartItem.save();
+      res.status(201).json({ msg: "Added to your cart",error:false });
+    } else {
+      res.status(401).json({ msg: "Please log in",error:true });
+    }
+  } catch (err) {
+    res.status(500).json({ msg: err.message ,error:true});
+  }
 });
 
 cartRouter.patch('/update/:id',async(req,res)=>{

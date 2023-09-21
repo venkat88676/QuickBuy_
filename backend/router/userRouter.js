@@ -6,6 +6,7 @@ const {validate}=require("../middleware/validate")
 const {UserModel}=require('../model/userModel')
 const {passport}=require("../config/google.auth")
 const userRouter=express.Router();
+require("dotenv").config()
 
 userRouter.get("/",async(req,res)=>{
     try{
@@ -23,7 +24,7 @@ userRouter.post('/login',async(req,res)=>{
         if(user){
             bcrypt.compare(password,user.password,(err,result)=>{
                 if(result){
-                    let token=jwt.sign({userId:user._id},'masai')
+                    let token=jwt.sign({userId:user._id},process.env.tokenSecret)
                     res.status(200).send({"msg":"Login Successfully","token":token,"usedetails":user})
                 }
                 else res.status(400).send({"msg":"Wrong credentials"}) 
@@ -82,6 +83,7 @@ userRouter.get("/getdata", async(req,res)=>{
     try {
         let {_id}=req.query       
         let user=await UserModel.findOne({_id})
+        let token=jwt.sign({userId:user._id},process.env.tokenSecret)
         res.send({"userdetails":user})
         
     } catch (error) {
@@ -100,15 +102,11 @@ userRouter.get('/auth/google/callback',
     // Successful authentication, redirect home.
     console.log("userroute",req.user)
     const user=req.user
-    let token=jwt.sign({userId:user._id},'masai')   
-    // res.redirect(` http://127.0.0.1:5500/frontend/index.html?userid=${user._id}`);
-    
-    res.send(`<a href="http://127.0.0.1:5500/frontend/index.html?userid=${user._id}" id="myid">Loding...🕧</a>
-    <script>
-        let a = document.getElementById('myid')
-        a.click()
-        console.log(a)
-    </script>`)  
+    let token=jwt.sign({userId:user._id},process.env.tokenSecret)   
+ 
+    res.send(`<script>
+    window.location.href = "http://127.0.0.1:5500/frontend/index.html?userid=${user._id}&token=${token}";
+  </script>`);
   });
 
 

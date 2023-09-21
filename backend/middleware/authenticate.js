@@ -1,21 +1,25 @@
-const jwt =require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+require("dotenv").config()
 
-const authenticate=(req,res,next)=>{
-    const token=req.headers.authorization
-    if(token){
-        jwt.verify(token,'masai',(err,decoded)=>{
-            if(decoded){
-                req.body.userId=decoded.userId
-                console.log(decoded)
-                next()
-            }
-            else{
-                res.send({"msg":"Please Login"})
-            }
-        })
-    }else{
-        res.send({"msg":"Please Login"})
-    }
-}
+const authenticate = (req, res, next) => {
+  const token = req.headers.authorization;
+  if (token) {
+    jwt.verify(token, process.env.tokenSecret, (err, decoded) => {
+      if (err) {
+        if (err.name === "TokenExpiredError") {
+          return res.status(401).json({ msg: "Token expired" });
+        } else {
+          return res.status(401).json({ msg: "Invalid token" });
+        }
+      }
 
-module.exports={authenticate}
+      req.body.userId = decoded.userId;
+    
+      next();
+    });
+  } else {
+    res.send({ msg: "Provide token" });
+  }
+};
+
+module.exports = { authenticate };

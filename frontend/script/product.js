@@ -69,19 +69,17 @@ function getData() {
             method: "POST",
             headers: {
               "Content-type": "application/json",
-              // Authorization: localStorage.getItem("token"),
+              Authorization: localStorage.getItem("token"),
             },
             body: JSON.stringify(res[i]),
           })
             .then((res) => res.json())
             .then((res) => {
-              if (res.msg !== "added") {
-                alert("Already in Cart");
-              } else {
-                alert("Product Added To Cart");
-              }
-
-              console.log(res.msg);
+              let msg=res.msg;
+              if(msg.includes("duplicate key error collection")){
+                alert("Already in cart")
+              }else
+              alert(msg)
             })
             .catch((err) => {
               alert("Please Login First");

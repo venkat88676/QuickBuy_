@@ -13,8 +13,8 @@ function getCart() {
         if (res.length == 0) {
           let img = document.createElement("img");
           img.src =
-            "https://shop.millenniumbooksource.com/static/images/cart1.png";
-          img.style.width = "700px";
+            "https://i.pinimg.com/originals/5a/d0/47/5ad047a18772cf0488a908d98942f9bf.gif";
+          img.style.width = "500px";
           proContainer.append(img);
         }
         let sum=0
