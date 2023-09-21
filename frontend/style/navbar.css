@@ -78,8 +78,9 @@ a{
     z-index: 1;
     color: #7d8586;
 }   
-#menuIcon ion-icon{
-    color: black;
+
+#menuIcon ion-icon,#cart ion-icon,.dropdown-btn ion-icon{
+    color: rgb(34, 33, 33);
     cursor: pointer;
     font-size: 30px;
 }
@@ -140,8 +141,5 @@ ul{
     display: block;
  
 }
-.dropdown-btn ion-icon{
-    font-size: 35px;            
-    color: rgb(77, 73, 73);
-}
+
 /* ----end---- */

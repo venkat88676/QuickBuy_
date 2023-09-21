@@ -53,10 +53,13 @@ function getData() {
         let card = document.createElement("div");
         let img = document.createElement("img");
         img.src = res[i].image;
-        let name = document.createElement("h4");
+        let name = document.createElement("p");
         name.innerText = res[i].name;
         let price = document.createElement("h4");
-        price.innerText = `₹${res[i].price}/- ...Rating:- ${res[i].rating} ★★★★☆`;
+        price.innerHTML = `₹${res[i].price} `;
+        price.style="color:#0275dd"
+        let rate = document.createElement("p")
+        rate.innerHTML=`${res[i].rating} <ion-icon style="color:#ffd700" name="star"></ion-icon>`;
         let btn = document.createElement("button");
         btn.innerText = "Add To Cart";
 
@@ -66,7 +69,7 @@ function getData() {
             method: "POST",
             headers: {
               "Content-type": "application/json",
-              Authorization: localStorage.getItem("token"),
+              // Authorization: localStorage.getItem("token"),
             },
             body: JSON.stringify(res[i]),
           })
@@ -85,7 +88,7 @@ function getData() {
               console.log(err);
             });
         });
-        card.append(img, name, price, btn);
+        card.append(img, name,rate, price, btn);
         proContainer.append(card);
       }
     })

@@ -1,6 +1,7 @@
 
 let BaseUrl=`http://localhost:8800`
 
+
 // get userId from url given by google auth--->
 
 let params = new URLSearchParams(window.location.search);
@@ -21,7 +22,10 @@ if(userId){
     })
 }
 
-// search function---->
+
+// -------------search function---->
+
+
 let searchTimer
 function searchItem(search){
   console.log(search)
@@ -43,8 +47,20 @@ searchInput.addEventListener("input",()=>{
   }, 1000);
 })
 
+// -------------show cart items cart--------->
+function showCart(){
+  const user=JSON.parse(localStorage.getItem("userdetails"))
+  if(!user){
+    alert("Please Login first")
+    return location.href="./signin.html"
+  }
+  else {
+    location.href="./cart.html"
+  }
+}
 
-// login valiidation to print name----->
+
+// --------------show name in nav bar----->
 
 let checkInOutBtn = document.getElementById("checkInOutBtn");
 let userDetails = document.getElementById("userDetails");
@@ -65,9 +81,11 @@ function checkLogin() {
     logoutBtn.style.display = "none";
   }
 }
-setTimeout(checkLogin(),2000) ;
+setTimeout(checkLogin(),3000) ;
 
-//  logout function
+
+//  -----------logout function---------------
+
 function logoutFun() {
   let res=window.confirm("Do you want to logout?");
   if(res){

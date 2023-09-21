@@ -32,7 +32,10 @@
           <div ><ion-icon id="searchIcon" name="search-outline"></ion-icon></div>
         </div>
         <div id="rightNav">
-          <div id="menuIcon"><ion-icon name="menu-sharp"></ion-icon></div>
+          <div id="menuIcon">
+            <ion-icon name="menu-sharp"></ion-icon>
+          </div>
+
           <div class="dropdown" id="userDetails">
             <div class="dropdown-btn">
               <ion-icon name="person-circle-outline"></ion-icon>
@@ -49,10 +52,16 @@
               </div>
             </div>
           </div>
+
+          <div id="cart" onclick="showCart()">
+            <ion-icon name="bag-outline"></ion-icon>
+          </div>
+          
+          
           
           <div id="person">
             <a href="./signin.html"
-              ><button id="checkInOutBtn" class="btn">Login/Register</button></a
+              ><button id="checkInOutBtn" class="btn">Login</button></a
             >
           </div>
           <div>

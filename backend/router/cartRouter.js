@@ -19,23 +19,24 @@ cartRouter.get("/", async (req, res) => {
 });
 
 cartRouter.post("/create", async (req, res) => {
-  const token = req.headers.authorization;
-  jwt.verify(token, "masai", async (err, decoded) => {
-    if (decoded) {
-      let userId = decoded.userId;
-      req.body.quantity=1
-      const payload = req.body;
-      const note = new CartModel(payload,userId);
-      try {
-        await note.save();
-        res.send({ msg: "added" });
-      } catch (err) {
-        res.send({ msg: err.message });
-      }
-    } else {
-      res.send({ msg: "Please Login" });
-    }
-  });
+  
+  // const token = req.headers.authorization;
+  // jwt.verify(token, "masai", async (err, decoded) => {
+  //   if (decoded) {
+  //     let userId = decoded.userId;
+  //     req.body.quantity=1
+  //     const payload = req.body;
+  //     const note = new CartModel(payload,userId);
+  //     try {
+  //       await note.save();
+  //       res.send({ msg: "added" });
+  //     } catch (err) {
+  //       res.send({ msg: err.message });
+  //     }
+  //   } else {
+  //     res.send({ msg: "Please Login" });
+  //   }
+  // });
 });
 
 cartRouter.patch('/update/:id',async(req,res)=>{
