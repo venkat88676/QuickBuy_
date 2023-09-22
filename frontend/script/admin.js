@@ -86,7 +86,7 @@ function fetchUser() {
      
       let img = document.createElement("img");
       img.classList.add("imgUser");
-      img.src = element.avatar;
+      img.src = "https://img.freepik.com/premium-vector/man-profile-cartoon_18591-58482.jpg?w=900";
       let divImg=document.createElement("div")
       divImg.append(img)
   

@@ -3,8 +3,8 @@ const basicURL = `https://dull-coveralls-fawn.cyclic.cloud`;
 
 let proContainer = document.querySelector(".cartContainer");
 
-function showCart() {
- 
+
+function showCartDetails() { 
   proContainer.innerHTML=`<img id="loader" src="./images/loader3.gif" alt="loading..">`
   fetch(`${basicURL}/cart`, {
     headers: {
@@ -22,12 +22,18 @@ function showCart() {
     });
 }
 
-showCart();
+
+showCartDetails();
+
 
 function displayData(res) {
-  
-  let tolItem = document.getElementById("tolItem");
-  tolItem.innerText = `Total Item in Your Cart is ${res.length}`;
+
+  // store no of items in localstoage
+
+  if(res.length!=0) localStorage.setItem("noOfItemInCart",res.length)
+
+  // check empty cart----------->
+
   if (res.length === 0) {
     let img = document.createElement("img");
     img.src =
@@ -35,7 +41,11 @@ function displayData(res) {
     img.style.width = "500px";
     return proContainer.append(img);
   }
+ 
+  let tolItem = document.getElementById("tolItem");
+  tolItem.innerText = `Total Item in Your Cart is ${res.length}`;
   let sum = 0;
+
   res.map((elem) => {
     let card = document.createElement("div");
     let img = document.createElement("img");

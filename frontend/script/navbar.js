@@ -52,6 +52,7 @@ searchInput.addEventListener("input",()=>{
 
 // -------------show cart items cart--------->
 function showCart(){
+  console.log(cart)
   const user=JSON.parse(localStorage.getItem("userdetails"))
   if(!user){
     alert("Please Login first")
@@ -62,6 +63,11 @@ function showCart(){
   }
 }
 
+// ------------show no of cart items -----------
+
+let noOfItems=document.getElementById("noOfItems")
+noOfItems.innerText=localStorage.getItem("noOfItemInCart")||""
+
 
 // --------------show name in nav bar----->
 
@@ -71,7 +77,7 @@ let usernameTag = document.getElementById("username");
 let logoutBtn = document.getElementById("logoutBtn");
 let admin = document.getElementById("adminDashboard")
 function checkLogin() {
-  let userdetails = JSON.parse(localStorage.getItem("userdetails")); 
+  let userdetails = JSON.parse(localStorage.getItem("userdetails"))||""; 
   if(userdetails.admin){
 
     admin.style.display="block"

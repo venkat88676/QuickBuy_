@@ -38,6 +38,14 @@ a{
     /* border: solid red; */
     width: 15%;
 }
+#noOfItems{
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 15px;
+    color: #ff0000;
+    font-weight:bolder;
+    font-size: 15px;
+}
 
 .btn{
     cursor: pointer;
