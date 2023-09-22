@@ -69,10 +69,13 @@ let checkInOutBtn = document.getElementById("checkInOutBtn");
 let userDetails = document.getElementById("userDetails");
 let usernameTag = document.getElementById("username");
 let logoutBtn = document.getElementById("logoutBtn");
-
+let admin = document.getElementById("adminDashboard")
 function checkLogin() {
   let userdetails = JSON.parse(localStorage.getItem("userdetails")); 
-  
+  if(userdetails.admin){
+
+    admin.style.display="block"
+  }
   if (userdetails) {
     checkInOutBtn.style.display = "none";
     userDetails.style.display = "block";

@@ -15,10 +15,10 @@ proRouter.get('/',async(req,res)=>{
     if(search){
         filter.name=new RegExp(search, 'i');
     }
-    let skip=0,limit=9
+    let skip=0,limit
     if(page){
         skip=(page-1)*9;
-       
+       limit=9
     }
     try{
         let products=await ProModel.find(filter).skip(skip).limit(limit);
@@ -39,15 +39,22 @@ proRouter.post('/add',async(req,res)=>{
     }    
 })
 
+
+// --------------update products--------------->
+
 proRouter.patch('/:id', async (req, res) => {
     const id = req.params.id;
     const payload = req.body;
-    console.log(payload, id);
+    console.log("id-back",id)
     try {
-      await ProModel.findByIdAndUpdate(id, payload);
-      res.status(200).send({ "msg": "product updated" });
+      const updatedProduct = await ProModel.findByIdAndUpdate(id, payload, { new: true });
+      if (!updatedProduct) {
+        return res.status(404).send({ msg: 'Product not found' });
+      }
+      res.status(200).send({ msg: 'Product updated', updatedProduct });
     } catch (err) {
-      res.status(400).send(err);
+      console.error(err);
+      res.status(500).send({ error: 'Internal server error' });
     }
   });
 

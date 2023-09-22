@@ -57,6 +57,7 @@
   background-color: #8c939b;
   border-radius: 5px;
   color: #fff;
+  cursor: pointer;
 }
 
 #toggle-buttons button.active {

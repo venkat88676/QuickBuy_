@@ -23,7 +23,6 @@ body{
 
 .main{
     display: flex;
-    border:solid red;
     width: 100%;
     position: absolute;
     top:12%;
@@ -31,7 +30,7 @@ body{
 /* left menu css */
 .left{
     position: absolute;
-    width: 20%;
+    width: 17%;
     background-color: #2B3467;
     border-left: 10px solid #BAD7E9;
     color: white;
@@ -72,14 +71,17 @@ body{
     /* border: solid red; */
 }
 .right{
+    width: 81%;
+    /* border:solid #2B3467; */
     position: relative;
-    left: 22%;
+    left: 18%;
     transition: 0.5s;
 }
-.right.active{
+/* .right.active{
+  
     left: 10%;
     transition: 0.5s;
-}
+} */
 .upper{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -90,7 +92,6 @@ body{
 .card{
 
     display: flex;
-    /* border: solid red; */
     align-items: center;
     justify-content: space-between;
     padding: 10px;
@@ -116,9 +117,8 @@ body{
 
 /* 1st section */
 .formfill {
-    width: 25%;
-    /* margin-right:20px ; */
-    /* margin-top: 50px; */
+    width: 35%;
+    margin:0px 10px 0px 10px ;
     line-height: 40px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
@@ -159,58 +159,44 @@ body{
     color: white;
   }
 
-  /* table section css */
+  /* -------------table section css ------------*/
   .parent{
     display: flex;
   }
 .table1{
-    width: 50%;
+    width: 65%;
     transition: 0.5s;
     /* border: solid red; */
     height: 650px;
     overflow: scroll;
 }
 .table11{
-    width: 73%;
-    /* border: solid red; */
+    /* width: 68%; */
+    padding: 15px;
     transition: 0.5s;
-    /* border: solid red; */
+   margin-top: 20px;
     height: 650px;
     overflow: scroll;
 }
-.table1.active{
-    width: 60%;
-    padding-left: 30px;
-    transition: 0.5s;
-    height: 650px;
-    overflow: scroll;
-    /* border: solid red; */
-}
-.table11.active{
-    width: 80%;
-    padding-left: 30px;
-    transition: 0.5s;
-    height: 650px;
-    overflow: scroll;
-    /* border: solid red; */
-}
+
+
 .table12{
     /* border:solid red; */
+    margin-top: 30px;
     padding-left: 20px;
-    width: 20%;
+    width: 50%;
     transition: 0.5s;
     height: 650px;
 }
-tbody td{
-    
+tbody td{    
     background-color: #E3DFFD;
-    padding-left: 30px;
-    padding-right:30px ;
+    padding-left: 10px;
+    padding-right:10px ;
     border-radius: 5px;
 }
 thead td{
     background-color: #2B3467;
-    padding: 15px;
+    padding: 10px;
     color: white;
     border-radius: 5px;
     position: sticky;
@@ -226,12 +212,18 @@ thead td{
 }
 .cart{
     /* background-color: #64B5F6; */
+    /* border:solid red; */
+
     display: flex;
+    padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 50px;
     margin-bottom: 5px;
     font-size: small;
-    line-height: 6px;
+    line-height: 20px;
+}
+.cart:hover{
+    background-color: #d8e0e8;
 }
 
 .edit {

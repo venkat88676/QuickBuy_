@@ -141,5 +141,7 @@ ul{
     display: block;
  
 }
-
+#adminDashboard{
+    display: none;
+}
 /* ----end---- */

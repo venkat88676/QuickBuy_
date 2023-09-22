@@ -119,12 +119,15 @@ document.getElementById("admin").addEventListener("submit",(e)=>{
       })
         .then((res) => res.json())
         .then((res) => {
+          let details=res.usedetails
+          details.admin=true;
+          console.log(details);
           const inputOtp = prompt("Enter security key for Admin verification");
-          console.log(payload,res);
-          if (res.token && inputOtp === "1234") {
+          
+          if (res.token && inputOtp === "1234") {           
             alert("Login Successful As Admin");
             window.location.href = "./admin.html";
-            localStorage.setItem("userdetails",JSON.stringify(res.usedetails))
+            localStorage.setItem("userdetails",JSON.stringify(details))
             localStorage.setItem("token", res.token);
           } else {
             alert("Wrong Credential");

@@ -56,15 +56,20 @@ function displayData(res) {
     inc.addEventListener("click", () => {
       elem.quantity = elem.quantity + 1;
       let payload = { quantity: elem.quantity };
-      updateQuantity(elem), payload;
+      updateQuantity(elem,payload);
     });
 
     let dec = document.createElement("button");
     dec.innerText = "-";
     dec.addEventListener("click", () => {
-      elem.quantity = elem.quantity - 1;
-      let payload = { quantity: elem.quantity };
-      updateQuantity(elem, payload);
+      if(elem.quantity>1){
+        elem.quantity = elem.quantity - 1;
+        let payload = { quantity: elem.quantity };
+        updateQuantity(elem, payload);
+      }else{
+        dec.disabled=true;
+      }
+      
     });
 
     cartIn.append(dec, quantity, inc, remove);

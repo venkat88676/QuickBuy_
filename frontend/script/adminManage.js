@@ -1,5 +1,5 @@
 
-const basicUrl=`https://dull-coveralls-fawn.cyclic.cloud`
+const basicURL=`https://dull-coveralls-fawn.cyclic.cloud`
 
 let menu = document.querySelector(".menu");
 let left = document.querySelector(".left");
@@ -17,7 +17,7 @@ function fetchData() {
   fetch(`${basicURL}/products`)
     .then((req) => req.json())
     .then((data) => {
-      console.log(data);
+      // console.log("data is this",data);
       display(data);
     })
     .catch((err) => {
@@ -51,30 +51,61 @@ function display(pdata) {
     let del = document.createElement("button");
     del.innerText = "Delete";
     del.classList.add("delete");
-    del.addEventListener("click",()=>{
-      delProd(element._id)
-    })
+    del.addEventListener("click", () => {
+      delProd(element._id);
+    });
 
     let edit = document.createElement("button");
     edit.innerText = "Edit";
     edit.classList.add("edit");
-    edit.addEventListener("click",()=>{
-      titleIn.value=element.name;
-      categoryIn.value=element.category;
-      urlIn.value=element.image;
-      priceIn.value=element.price
-      let updatebtn=document.getElementById("update")
-      updatebtn.addEventListener("click",(e)=>{
-        e.preventDefault();
-        updateProd(element._id,titleIn.value,categoryIn.value,priceIn.value,urlIn.value)
-      }) 
-    })
+
+    // Define the edit event listener outside the loop
+    edit.addEventListener("click", () => {
+      handleEditClick(element);
+    });
 
     td5.append(del, edit);
     tr.append(td1, td2, td3, td4, td5);
     tproducts.append(tr);
-   
   });
+}
+
+// Define a separate function to handle the edit button click
+function handleEditClick(element) {
+  console.log(element);
+  titleIn.value = element.name;
+  categoryIn.value = element.category;
+  urlIn.value = element.image;
+  priceIn.value = element.price;
+  let updatebtn = document.getElementById("update");
+  updatebtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    updateProd(element._id, titleIn.value, categoryIn.value, priceIn.value, urlIn.value);
+  });
+}
+
+//---------------update Products------------->
+
+function updateProd(id,name,category,price,url){
+  console.log("id",id)
+fetch(`${basicURL}/products/${id}`,{
+  method:'PATCH',
+  body:JSON.stringify({
+    name:name,
+    price:price,
+    image:url,
+    category:category
+  }),
+  headers:{
+    'Content-type':'application/json'
+  }
+})
+.then((req)=>req.json())
+.then(()=>{
+  fetchData();
+  console.log("updated")
+  alert("Updated Successfully")
+})
 }
 
 // input taking part---->
@@ -93,28 +124,7 @@ addBtn.addEventListener("click",(e)=>{
   addProd(title,category,price,url)
 })
 
-//update Products------------->
-function updateProd(id,name,category,price,url){
-    console.log(id)
-  fetch(`${basicURL}/products/${id}`,{
-    method:'PATCH',
-    body:JSON.stringify({
-      name:name,
-      price:price,
-      image:url,
-      category:category
-    }),
-    headers:{
-      'Content-type':'application/json'
-    }
-  })
-  .then((req)=>req.json())
-  .then(()=>{
-    fetchData();
-    console.log("updated")
-    alert("Updated Successfully")
-  })
-}
+
 
 //Add function------------->
 
