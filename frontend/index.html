@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quickbuy</title>
-    <link rel="shortcut icon" href="./images/fav_icon.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./images/fav_icon.png"
+      type="image/x-icon"
+    />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -18,189 +22,143 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- css file -->
     <link rel="stylesheet" href="./style/index.css" />
-    
+    <!-- swiper css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <!-- <div class="popup">
-       
-        <div class="signIn">
-          <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
-          <h2>Sign In to Buy Here</h2> 
-          <div class="icons">
-            <ion-icon name="logo-facebook"></ion-icon>
-            <ion-icon name="logo-twitter"></ion-icon>
-            <ion-icon name="logo-google"></ion-icon>
-            <p>create new account</p>
-          </div>        
-
-          <input type="text" id="emailLog" placeholder="Enter Email" />
-          <input type="password" id="passLog" placeholder="Enter Password" />
-          <button onclick="onSignIn()">Sign In</button>
-          
-          <button onclick="adminSignin()">SignIn As Admin</button>
-          <h3>OR</h3>
-          <button id="googleBtn">SignIn with Google</button>
-        </div>
-        
-        <div class="register">
-          <ion-icon id="prev" onclick="prev()" name="return-up-back-outline"></ion-icon>
-          <ion-icon id="close" onclick="remove()" name="close-outline"></ion-icon>
-          <h2>Create An Account</h2>
-          <div class="icons">
-            <ion-icon name="logo-facebook"></ion-icon>
-            <ion-icon name="logo-twitter"></ion-icon>
-            <ion-icon name="logo-google"></ion-icon>
-          </div>
-          <input id="name" type="text" placeholder="Enter Your Name" />
-          <input id="email" type="email" placeholder="Email Address" />
-          <input id="password" type="password" placeholder="Enter Password" />
-          <input id="gender" type="text" placeholder="Gender" />
-          <input  id="age" type="number" placeholder="Age" />
-          <input id="city" type="text" placeholder="City" />
-          <button onclick="onRegister()">Register</button>
-        </div>
-    </div> -->
-
-      <!-- Main Body -->
+    <!-- Main Body -->
     <div class="container">
       <header></header>
-      
-
       <div class="mainbody">
-        <div class="body1">
-          <div id="leftbody">
-            <div id="text">
-              <h2>MacBook</h2>
-              <p>Saveup to $700 on select models.</p>
-              <p>Minimum saving is $50.</p>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="./images/banner1.jpg" alt="" />
             </div>
-            <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-659787-macbook-f3e75956-d989-49c7-96b5-45eb5d4e73f5.jpg;maxHeight=1456;maxWidth=1456"
-              alt=""
-            />
-          </div>
-          <div id="rightbody">
-            <h3 style="line-height: 50px">Recommended for You</h3>
-            <div id="recom">
-              <img
-                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901809_sd.jpg;maxHeight=640;maxWidth=550"
-                alt=""
-              />
-              <img
-                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5200/5200904_sd.jpg;maxHeight=640;maxWidth=550"
-                alt=""
-              />
-              <img
-                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6385/6385437_sd.jpg;maxHeight=640;maxWidth=550"
-                alt=""
-              />
-              <img
-                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4901/4901868_sd.jpg;maxHeight=640;maxWidth=550"
-                alt=""
-              />
+            <div class="swiper-slide">
+              <img src="./images/banner2.jpg" alt="" />
             </div>
-            <div id="rightdown">
-              <div>
-                <img src="./images/pic1.png" alt="" />
-              </div>
-              <div>
-                <img src="./images/pic2.png" alt="" />
-              </div>
+            <div class="swiper-slide">
+              <img src="./images/banner6.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/banner4.jpg" alt="" />
             </div>
           </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
         </div>
-        <div class="sec">
-          <div>
-            <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/ghp-MMT-669182-tv-16c7b1f5-f700-4469-bcf6-821e568b4e3f.jpg;maxHeight=960;maxWidth=960"
-              alt=""
-            />
+
+        <div id="subBody">
+
+          <p class="title">Our Latest <span>SmartPhones</span></p>
+          <div id="smartPhoneContainer" class="dynamicSec">
+            <!-- append div of smartphones -->
           </div>
-          <div>
-            <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-106837-iphone14-yellow-na-ghp-a82b438b-18ff-47cc-880a-63e33b653e8e.jpg;maxHeight=960;maxWidth=960"
-              alt=""
-            />
+        
+          <!-- <h3 class="title">New Generation  <span>Laptops</span></h3> -->
+          <!-- <div id="laptopsContainer" class="dynamicSec"> -->
+             <!-- append div of smartphones -->
+          <!-- </div> -->
+
+          <h3 class="title">New Design  <span>Tablets</span></h3>
+          <div id="tabletsContainer" class="dynamicSec">
+             <!-- append div of smartphones -->
           </div>
-          <div>
+
+          <!-- <h3 class="title">Latest Design <span>Smart TV's</span> </h3> -->
+          <!-- <div id="smartTvContainer" class="dynamicSec"> -->
+             <!-- append div of smartphones -->
+          <!-- </div> -->
+
+          <h3 class="title">New Amazing <span>Headphones</span> </h3>
+          <div id="headphonesContainer" class="dynamicSec">
+             <!-- append div of smartphones -->
+          </div>
+
+          <h3 class="title">Our Featured offers</h3>
+          <div class="sec">
+            <div>
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-665820_DER-87a2497b-38b8-45a5-b746-0bb83bc7ee42.jpg;maxHeight=504;maxWidth=740"
+                alt=""
+              />
+              <h3>Spring Appliance Savings Events.</h3>
+              <p>
+                Upgrade your space and get fast fulfillment on select major
+                Appliance
+              </p>
+            </div>
+            <div>
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/top-MMT-665816-Save350WindowsLaptops_DER-b825f326-fdf3-4358-a96c-2bee0b54751f.jpg;maxHeight=504;maxWidth=740"
+                alt=""
+              />
+              <h3>Save up to $350 on select Windows laptops.</h3>
+              <p>Minimum saving is $50</p>
+            </div>
+            <div>
+              <img
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-635964-airpods-family-pol_der-c4fae3bf-49cc-4618-98ee-ca0a80ab6265.jpg;maxHeight=504;maxWidth=740"
+                alt=""
+              />
+              <h3>AirPods Max.</h3>
+              <p>
+                Over-ear headphones reimagined with immersive high-fidelity
+                audio and an exceptional fit.
+              </p>
+            </div>
+          </div>
+
+          <div id="samsung">
             <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/subghp-EVN-205712-upgrade-plus-b513dde8-d003-432d-b792-8b4eb9903e0d.jpg;maxHeight=960;maxWidth=960"
+              style="width: 100%"
+              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/custom_fluid_lg_mmt-666079-60b989c9-968b-4114-b8cf-3b96f84319c8.jpg"
               alt=""
             />
+            <div>
+              <h2>SAMSUNG</h2>
+              <h2>Save up to</h2>
+              <p style="font-size: 100px">$180</p>
+              <h3>
+                on a storange upgrade on unlocked Samsung Galaxy S23 Series cell
+                phones.
+              </h3>
+              <button>Shop Now</button>
+            </div>
           </div>
         </div>
-        <h3
-          style="
-            padding: 0 0 20px 20px;
-            border-bottom: solid rgba(191, 182, 182, 0.691);
-          "
-        >
-          Our Featured offers
-        </h3>
-        <div class="sec">
-          <div>
-            <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-665820_DER-87a2497b-38b8-45a5-b746-0bb83bc7ee42.jpg;maxHeight=504;maxWidth=740"
-              alt=""
-            />
-            <h3>Spring Appliance Savings Events.</h3>
-            <p>
-              Upgrade your space and get fast fulfillment on select major
-              Appliance
-            </p>
-          </div>
-          <div>
-            <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/top-MMT-665816-Save350WindowsLaptops_DER-b825f326-fdf3-4358-a96c-2bee0b54751f.jpg;maxHeight=504;maxWidth=740"
-              alt=""
-            />
-            <h3>Save up to $350 on select Windows laptops.</h3>
-            <p>Minimum saving is $50</p>
-          </div>
-          <div>
-            <img
-              src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-635964-airpods-family-pol_der-c4fae3bf-49cc-4618-98ee-ca0a80ab6265.jpg;maxHeight=504;maxWidth=740"
-              alt=""
-            />
-            <h3>AirPods Max.</h3>
-            <p>
-              Over-ear headphones reimagined with immersive high-fidelity audio
-              and an exceptional fit.
-            </p>
-          </div>
-        </div>
-        <div id="samsung">
-          <img style="width:100%"
-            src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/custom_fluid_lg_mmt-666079-60b989c9-968b-4114-b8cf-3b96f84319c8.jpg"
-            alt=""
-          />
-          <div>
-            <h2>SAMSUNG</h2>
-            <h2>Save up to</h2>
-            <p style="font-size: 100px">$180</p>
-            <h3>
-              on a storange upgrade on unlocked Samsung Galaxy S23 Series cell
-              phones.
-            </h3>
-            <button>Shop Now</button>
-          </div>
-        </div>
+
         <!-- footer part -->
-       <footer></footer>
+        <footer></footer>
       </div>
     </div>
-    
   </body>
 </html>
 
+<script src="./script/index.js"></script>
 
 <script>
   $(function () {
-      $('header').load('navbar.html');
-  }) 
+    $("header").load("navbar.html");
+  });
 </script>
 <script>
   $(function () {
-      $('footer').load('footer.html');
-  }) 
+    $("footer").load("footer.html");
+  });
 </script>

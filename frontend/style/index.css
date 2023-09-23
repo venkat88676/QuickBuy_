@@ -10,55 +10,59 @@ a {
   text-decoration: none;
   color: white;
 }
+
 .mainbody {
-    /* position: relative; */
-  margin-top: 110px;
-  /* border: solid red; */
+  margin-top: 75px;
 }
+#subBody{
+  width: 95%;
+  margin: auto;
+}
+
+
+/* -----------swiper slides------------- */
+
+.swiper {
+  width: 100%;
+  height: 500px; 
+}
+
+.swiper-slide img{
+  text-align: center;
+  width: 1100px;
+  height: 500px;
+}
+.swiper-slide{
+  text-align: center;
+}
+.swiper-button-prev,.swiper-button-next{
+  background-color: #e1e5e7; /* Replace with your desired color */
+    color: #FFFFFF !important;
+  padding: 40px 20px 40px 20px;
+  border-radius: 5px;
+    
+  
+}
+
+
+/* ------------main body---------------- */
+
 .body1 {
   display: flex;
+  /* border:solid red */
 }
-#leftbody {
-  width: 50%;
-  text-align: center;
-  margin: 20px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+.title{
+  font-weight: 100;  
+  border-bottom: 0.3px solid rgb(92, 90, 90);
+  font-size: 30px;
+  margin: 20px 0px 20px 0px;
+  width: 40%;
+
 }
-#leftbody img {
-  width: 600px;
-  /* border: solid red; */
-  margin-bottom: 20px;
-}
-#text {
-  font-size: 20px;
-  position: absolute;
-  margin: 65px 0px 0px 200px;
-}
-#recom {
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  display: flex;
-  margin: 10px;
-  justify-content: space-evenly;
-  padding: 10px;
-  /* width: 40%; */
-}
-#recom img {
-  width: 100px;
-  margin: 10px;
-}
-#rightdown {
-  display: flex;
-}
-#rightdown div {
-  margin: 10px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  display: flex;
-}
-#rightdown img {
-  width: 285px;
+.title span{
+  color: #2980f3;
+  font-size: 35px;
 }
 #samsung {
   display: flex;
@@ -76,13 +80,51 @@ a {
   border: 0px;
   margin-top: 40px;
 }
-.sec {
+.dynamicSec{
+  /* border: solid red; */
+  height: 300px;
+ display: grid; 
+ grid-template-columns: repeat(6,1fr);
+ gap: 10px;
+ text-align: center;
+ /* align-items: center; */
+}
+.dynamicSec img{
+  width: 130px;
+  /* height: 130px; */
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+
+}
+.dynamicSec img:hover{
+  transform: scale(1.1);
+
+}
+.headphoneImg{
+  width: 130px;
+  height: 130px;
+}
+
+.dynamicSec div{
+  padding:10px ;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   display: flex;
-  justify-content: space-evenly;
-  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center ;
+}
+.sec {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  text-align: center;
+
 }
 .sec img {
-  width: 400px;
+  
+  /* border: solid red; */
+  width: 300px;
 }
 .sec div {
   padding: 10px;
@@ -108,6 +150,18 @@ a {
     width: 10%;
     background-color: rgb(255, 255, 255);
     z-index:1;
+}
+.homeLoader{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left:50% ; 
+    width: 10%;
+    background-color: rgb(255, 255, 255);
+    z-index:1;
+
 }
 .maincont {
   display: flex;
@@ -146,11 +200,20 @@ a {
     height: 120px;
   }
   .proContainer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     text-align: center;
     padding: 10px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      transition: transform 0.5s;
+  }
+  .proContainer div:hover{
+    transform: scale(1.05);
   }
   .proContainer button {
     cursor: pointer;
