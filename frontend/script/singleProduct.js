@@ -20,3 +20,5 @@ rating.innerHTML=`Rating ${product.rating} <ion-icon style="color:#ffd700" name=
 category.innerText=`Category  - ${product.category}`
 
 productImage.append(avatar)
+
+

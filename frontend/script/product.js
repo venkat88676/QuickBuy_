@@ -53,12 +53,6 @@ function getData() {
 
         let card = document.createElement("div");
 
-        // sending product details to next page------->
-
-        card.addEventListener("click",()=>{
-          location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
-        })
-
         let img = document.createElement("img");
         img.src = element.image;
 
@@ -69,15 +63,24 @@ function getData() {
         let name = document.createElement("p");
         name.innerText = element.name.split(" ").splice(0,5).join(" ");
 
+         // sending product details to next page------->
+
+        name.addEventListener("click",()=>{
+          location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+        })
+        imgCard.addEventListener("click",()=>{
+          location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+        })
+
         let price = document.createElement("h2");
         price.innerHTML = `₹${element.price} `;
         price.style = "color:#0275dd";
 
         let rate = document.createElement("p");
         rate.innerHTML = `${element.rating} <ion-icon style="color:#ffd700" name="star"></ion-icon>`;
-        
+
         let btn = document.createElement("button");
-        btn.setAttribute("id", "addToCartBtn")
+        btn.setAttribute("class", "addToCartBtn")
         btn.innerText = "Add To Cart";
 
         btn.addEventListener("click", () => {
@@ -97,8 +100,8 @@ function getData() {
 
 getData();
 
-function addToCart() {
-  let addToCartBtn=document.getElementById("addToCartBtn")
+function addToCart(element) {
+  let addToCartBtn=document.querySelector(".addToCartBtn")
   
   const token = localStorage.getItem("token");
   if (!token) {

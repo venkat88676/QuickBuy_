@@ -33,6 +33,9 @@ function showSmartPhones(data) {
     }
     if (element.category === "smartphone") {
       let card = document.createElement("div");
+      card.addEventListener("click",()=>{
+        location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+      })
       let img = document.createElement("img");
       img.src = element.image;
       let name = document.createElement("p");
@@ -51,6 +54,9 @@ function showLaptops(data) {
   data.forEach((element) => {
     if (element.category === "laptop") {
       let card = document.createElement("div");
+      card.addEventListener("click",()=>{
+        location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+      })
       let img = document.createElement("img");
       img.src = element.image;
       let name = document.createElement("p");
@@ -67,6 +73,9 @@ function showTablets(data) {
   data.forEach((element) => {
     if (element.category === "tablet") {
       let card = document.createElement("div");
+      card.addEventListener("click",()=>{
+        location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+      })
       let img = document.createElement("img");
       img.src = element.image;
       let name = document.createElement("p");
@@ -89,6 +98,9 @@ function showSmartTV(data) {
     }
     if (element.category === "tv") {
       let card = document.createElement("div");
+      card.addEventListener("click",()=>{
+        location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+      })
       let img = document.createElement("img");
       img.src = element.image;
       let name = document.createElement("p");
@@ -113,11 +125,14 @@ function showHeadphones(data) {
     }
     if (element.category === "headphone") {
       let card = document.createElement("div");
+      card.addEventListener("click",()=>{
+        location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
+      })
       let img = document.createElement("img");
       img.setAttribute("class","headphoneImg")
       img.src = element.image;
       let name = document.createElement("p");
-      name.innerText = element.name.split(" ").slice(0,3);
+      name.innerText = element.name.split(" ").slice(0,3).join(" ");
 
       card.append(img, name);
       headphonesContainer.append(card);
