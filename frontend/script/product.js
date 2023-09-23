@@ -50,19 +50,32 @@ function getData() {
       loader.classList.add("hide");
       console.log(res);
       res.forEach((element) => {
+
         let card = document.createElement("div");
+
+        // sending product details to next page------->
+
         card.addEventListener("click",()=>{
-          location.href=`./singleProduct.html?prodId=${element._id}`
+          location.href=`./singleProduct.html?product=${JSON.stringify(element)}`
         })
+
         let img = document.createElement("img");
         img.src = element.image;
+
+        let imgCard=document.createElement("div")
+        imgCard.setAttribute("class","imgCard")
+        imgCard.append(img)
+
         let name = document.createElement("p");
         name.innerText = element.name.split(" ").splice(0,5).join(" ");
+
         let price = document.createElement("h2");
         price.innerHTML = `₹${element.price} `;
         price.style = "color:#0275dd";
+
         let rate = document.createElement("p");
         rate.innerHTML = `${element.rating} <ion-icon style="color:#ffd700" name="star"></ion-icon>`;
+        
         let btn = document.createElement("button");
         btn.setAttribute("id", "addToCartBtn")
         btn.innerText = "Add To Cart";
@@ -73,7 +86,7 @@ function getData() {
           addToCart(element);
         });
 
-        card.append(img, name, rate, price, btn);
+        card.append(imgCard, name, rate, price, btn);
         proContainer.append(card);
       });
     })

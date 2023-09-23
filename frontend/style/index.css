@@ -193,13 +193,22 @@ a {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-  height: 1050px;
+  height: 1150px;
 }
 .proContainer img {
-    width: 110px;
-    height: 120px;
+    width: 150px;
+    /* height: 140px; */
   }
-  .proContainer div {
+  .imgCard{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    /* border:solid red */
+  }
+
+  .proContainer>div {
+    background-color: #f5f9fb;
     display: flex;
     flex-direction: column;
     justify-content: center;

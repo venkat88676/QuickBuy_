@@ -4,14 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single product</title>
+      <!-- jquery  -->
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="./style/singleProduct.css">
+
 </head>
 <body>
-    
+    <header></header>
+    <div class="singleProdBody">
+        <div id="productImage">
+            <img id="avatar" src="" alt="">
+        </div>
+        <div id="productDetails">
+            <h1 id="nameProd" ></h1>
+            <p id="ratingProd"></p>            
+            <p id="categoryProd"></p>
+            <h1 id="priceProd"></h1>
+            <button id="buyNowProd" >Buy Now</button>
+            <br>
+            <button id="addToprod">Add To Cart</button>
+        </div>
+    </div>
+    <footer></footer>
 </body>
 </html>
+
+<!-- js file -->
+<script src="./script/singleProduct.js"></script>
+
+<!--header and footer jQuery script  -->
 <script>
-    let params= new URLSearchParams(window.location.search)
-    let id=params.get("prodId")
-    console.log(params)
-    console.log("id",id)
-</script>
+    $(function () {
+        $('header').load('navbar.html');
+    }) 
+  </script>
+  <script>
+    $(function () {
+        $('footer').load('footer.html');
+    }) 
+  </script>
