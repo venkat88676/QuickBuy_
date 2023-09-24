@@ -1,14 +1,14 @@
 const basicUrl=`https://dull-coveralls-fawn.cyclic.cloud`
 
-let menu = document.querySelector(".menu");
-let left = document.querySelector(".left");
-let right = document.querySelector(".right");
-let table11=document.querySelector(".table11")
-menu.addEventListener("click", () => {
-  left.classList.toggle("active");
-  right.classList.toggle("active");
-  table11.classList.toggle("active");
-});
+// let menu = document.querySelector(".menu");
+// let left = document.querySelector(".left");
+// let right = document.querySelector(".right");
+// let table11=document.querySelector(".table11")
+// menu.addEventListener("click", () => {
+//   left.classList.toggle("active");
+//   right.classList.toggle("active");
+//   table11.classList.toggle("active");
+// });
 
 // const api = "http://localhost:8800/products";
 fetchData();
@@ -74,7 +74,7 @@ function fetchUser() {
   function displayUser(pdata) {
     pdata.forEach((element) => {
       let cart = document.createElement("div");
-      cart.classList.add("cart")
+      cart.classList.add("users")
   
       let name = document.createElement("h4");
       name.innerText = element.name;  
