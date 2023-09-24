@@ -2,6 +2,7 @@ const basicURL = `https://dull-coveralls-fawn.cyclic.cloud`;
 
 var category = "";
 var rating = "";
+var sort = "";
 
 var page = 1;
 function get1() {
@@ -28,6 +29,7 @@ function getval() {
   // name=document.getElementById('name').value
   category = document.getElementById("byType").value;
   rating = document.getElementById("byRating").value;
+  sort = document.getElementById("byPrice").value;
   console.log(category, rating);
   getData();
 }
@@ -43,7 +45,7 @@ function getData() {
   proContainer.innerHTML = null;
 
   fetch(
-    `${basicURL}/products?category=${category}&rating=${rating}&search=${search}&page=${page}`
+    `${basicURL}/products?category=${category}&rating=${rating}&search=${search}&sortByPrice=${sort}&page=${page}`
   )
     .then((res) => res.json())
     .then((res) => {

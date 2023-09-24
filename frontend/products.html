@@ -25,10 +25,10 @@
    
          <!-- navigation -->
         <header></header>
-       
-        <!-- mainBody -->
-        <div class="maincont">
-          <div class="filter">
+
+        <!------------- filter section---------- -->
+        <div class="filter">
+          <div>
             <select onchange="getval()" id="byRating">
               <option value="">Filter By Rating</option>
               <option value="4.5">Above 4.5</option>
@@ -36,6 +36,8 @@
               <option value="3.5">Above 3.5</option>
               <option value="3">Above 3</option>
             </select>
+          </div>
+          <div>
             <select  onchange="getval()" id="byType">
               <option value="">Select Type</option>
               <option value="smartphone">Smartphones</option>
@@ -45,7 +47,18 @@
               <option value="headphone">HeadPhones</option>
             </select>
           </div>
+          <div>
+            <select onchange="getval()" id="byPrice">
+              <option value="">Filter By Price</option>
+              <option value="asc">Acending</option>
+              <option value="desc">Decending</option>
+            </select>
+          </div>
+         
+        </div>
 
+        <!-- mainBody -->
+        <div class="maincont">
           <div class="proContainer">
               <!-- Append all products--- -->
           </div>    

@@ -70,6 +70,7 @@ a{
 }
 #searchContainer{
     display: flex;
+    /* border: solid red; */
 }
 #searchInput{
     background-color: #dae5e6;
@@ -153,3 +154,27 @@ ul{
     display: none;
 }
 /* ----end---- */
+
+/* ---------------media query for small screeen-------------- */
+
+@media screen and (min-width:320px) and (max-width:750px) {
+    #searchContainer{
+        display: none;
+    }
+    #rightNav{
+        width: 35%;
+    }
+    ul{
+        flex-direction: column;
+        line-height: 55px;
+        
+    }
+    #mainMenu {
+        /* background-color: #1CB3C8; */
+        width: 50%;
+        height: 320px;
+        margin-left:50% ;
+        top: -350px;
+
+    }
+  }
