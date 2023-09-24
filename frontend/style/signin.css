@@ -33,7 +33,9 @@
   margin-top: 30px;
 }
 #form-login {
+  /* border:solid red; */
   display: flex;
+  justify-content: center;
 }
 #login,
 #signin,

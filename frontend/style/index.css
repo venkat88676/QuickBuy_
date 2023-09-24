@@ -255,6 +255,31 @@ a {
     color: #000000;
   }
 
+  /* ---------pagination-----------> */
+.pageNo {
+  display: flex;
+  width: 20%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 10px;
+  justify-content: space-evenly;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 5px;
+}
+.pageNo div {
+  cursor: pointer;
+  background-color: #ffce00;
+  /* border: solid red; */
+  font-weight: bold;
+  padding: 6px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  font-size: 25px;
+  border-radius: 5px;
+}
+
 
 
 
@@ -339,6 +364,7 @@ a {
 
 /* ----------------checkout page----------->*/
 .checkout {
+  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   margin-top: 9%;
@@ -360,6 +386,7 @@ a {
 .checkout button {
   cursor: pointer;
   width: 80%;
+  margin: auto;
   font-size: 18px;
   font-weight: bolder;
   color: rgb(255, 255, 255);
@@ -367,46 +394,88 @@ a {
   border-radius: 5px;
   border: none;
   margin-top: 20px;
-  margin-left: 55px;
   background-color: #ffce00;
   color: black;
 }
 
-/* ---------pagination-----------> */
-.pageNo {
-  display: flex;
-  width: 20%;
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding: 10px;
-  justify-content: space-evenly;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  border-radius: 5px;
-}
-.pageNo div {
-  cursor: pointer;
-  background-color: #ffce00;
-  /* border: solid red; */
-  font-weight: bold;
-  padding: 6px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  font-size: 25px;
-  border-radius: 5px;
-}
+
 
 /* ---------------media query for medium screen------------------ */
 
-@media screen and (max-width:750px) and (max-width:1200) {
+@media screen and (min-width:750px) and (max-width:1200px) {
+  .swiper {
+    /* width: 100%; */
+    height: 500px; 
+  }
+  
+  .swiper-slide img{
+    text-align: center;
+    width:800px;
+    height: 500px;
+  }
+  .dynamicSec{
+    grid-template-columns: repeat(3,1fr);
+    /* border: solid red; */
+   
+  }
+  .title{
+    font-size: 25px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+  }
+  .sec p{
+    display: none;
+  }
+  .sec h3{
+    line-height: normal;
+    /* text-align:start; */
+    font-size: 15px;
+  }
+  .sec img{
+    width: 200px;
+  }
+  #samsung{
+    display: none;
+  }
+  .proContainer{
+    /* border:solid red; */
+    grid-template-columns: repeat(3,1fr);
+  }
+  .proContainer img{
+    width: 120px;
+  }
+  .imgCard{
+    height: 160px;
+  }
+  .checkout {
+    width: 70%;
+    margin: auto;
+    margin-top: 15%;
+  }
+  
   
 }
 
 
-/*----------------media quesry for small screen--------------------  */
+/*----------------media query for small screen--------------------  */
 
 @media screen and (min-width:320px) and (max-width:750px) {
+  .swiper {
+    height: 320px; 
+  }
+  
+  .swiper-slide img{
+    text-align: center;
+    width:480px;
+    height: 320px;
+  }
+  .swiper-button-prev,.swiper-button-next{
+    padding: 0px;
+  }
   .dynamicSec{
     grid-template-columns: repeat(3,1fr);
     /* border: solid red; */
@@ -420,11 +489,8 @@ a {
     /* color: red; */
   }
   .title{
-    font-weight: 100;  
-    border-bottom: 0.3px solid rgb(92, 90, 90);
     font-size: 25px;
     text-align: center;
-    margin: 20px 0px 20px 0px;
     width: 80%;
     margin: auto;
     margin-top: 20px;
@@ -448,18 +514,7 @@ a {
   #samsung{
     display: none;
   }
-  .swiper {
-    height: 320px; 
-  }
   
-  .swiper-slide img{
-    text-align: center;
-    width:480px;
-    height: 320px;
-  }
-  .swiper-button-prev,.swiper-button-next{
-    padding: 0px;
-  }
   .proContainer{
     /* border:solid red; */
     grid-template-columns: repeat(2,1fr);
@@ -508,5 +563,10 @@ a {
   }
   #tolItem{
     width: 85%;
+  }
+  .checkout {
+    width: 90%;
+    margin: auto;
+    margin-top: 20%;
   }
 }

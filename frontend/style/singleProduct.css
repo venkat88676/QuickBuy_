@@ -68,3 +68,43 @@
   border: 0.4px solid black;
   color: black;
 }
+
+@media screen and (min-width:750px) and (max-width:1200px) {
+  .singleProdBody {
+   width: 90%; 
+  }
+  #productImage img {
+    /* cursor: zoom-in; */
+    width: 260px;
+  }
+  #buyNowProd,#addToprod{
+    width: 65%;
+  }
+  #productImage, #productDetails{
+    width: 90%;
+    margin: auto;
+  }
+
+}
+
+@media screen and (min-width:320px) and (max-width:750px) {
+  .singleProdBody {
+    flex-direction: column;
+    text-align: center;
+  }
+  #productImage img {
+    /* cursor: zoom-in; */
+    width: 250px;
+  }
+  #productImage, #productDetails{
+    width: 90%;
+    margin: auto;
+  }
+  #nameProd {
+    font-size: 28px;
+  }
+  #buyNowProd,#addToprod{
+    width: 60%;
+  }
+ 
+}
