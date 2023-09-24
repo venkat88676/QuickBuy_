@@ -5,7 +5,7 @@ let proContainer = document.querySelector(".cartContainer");
 
 
 function showCartDetails() { 
-  proContainer.innerHTML=`<img id="loader" src="./images/loader3.gif" alt="loading..">`
+  proContainer.innerHTML=`<img style="margin-left:200px" src="./images/loader3.gif" alt="">`
   fetch(`${basicURL}/cart`, {
     headers: {
       Authorization: localStorage.getItem("token"),
@@ -50,10 +50,11 @@ function displayData(res) {
     let card = document.createElement("div");
     let img = document.createElement("img");
     img.src = elem.image;
-    let name = document.createElement("h4");
+    let name = document.createElement("p");
     name.innerText = elem.name;
     let price = document.createElement("h4");
     price.innerText = `₹${elem.price}/- `;
+    
     let cartIn = document.createElement("div");
     cartIn.classList.add("cartIn");
     let remove = document.createElement("button");

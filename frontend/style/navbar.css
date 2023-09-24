@@ -158,6 +158,10 @@ ul{
 /* ---------------media query for small screeen-------------- */
 
 @media screen and (min-width:320px) and (max-width:750px) {
+    #logo{
+        width: 180px;
+        margin: 5px;
+    }
     #searchContainer{
         display: none;
     }

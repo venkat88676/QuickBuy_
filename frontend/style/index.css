@@ -146,27 +146,27 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 40%;
-    left:50% ; 
-    width: 10%;
+    height: 500px;
     background-color: rgb(255, 255, 255);
     z-index:1;
+}
+#loader img{
+  width: 150px;
 }
 .homeLoader{
   display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 40%;
-    left:50% ; 
-    width: 10%;
-    background-color: rgb(255, 255, 255);
-    z-index:1;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  z-index:1;
+}
+.homeLoader img{
+  width: 150px;
 
 }
 .maincont {
-  /* display: flex; */
+  display: flex;
 }
 .filter {
   display: flex;
@@ -174,7 +174,7 @@ a {
   /* position: fixed; */
   padding: 10px;
   /* width: 25%; */
-  margin-top: 8%;
+  margin-top: 10%;
   /* border: solid red; */
 }
 .filter select {
@@ -184,9 +184,11 @@ a {
   /* border: .3px solid black; */
   text-align: center;
   border-radius: 10px;
-  background-color: #f1f1f1;
+  background-color: #dfe2e4;
   /* width: 90%; */
   padding: 10px;
+  border: none;
+  border-bottom: solid rgb(0, 174, 255);
 }
 #tolItem {
   margin: 120px 500px 20px 20px;
@@ -201,7 +203,7 @@ a {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(4, 1fr);
-  height: 1150px;
+  /* height: 1150px; */
 }
 .proContainer img {
     width: 150px;
@@ -236,7 +238,7 @@ a {
 
   .proContainer button {
     cursor: pointer;
-    width: 50%;
+    width: 60%;
     font-size: 15px;
     color: rgb(255, 255, 255);
     padding: 10px;
@@ -258,17 +260,10 @@ a {
 
 /*------------------- cart page----------------- */
 
-.flex{
-  display: flex;
-  justify-content: space-between
-}
-.smallText{
-  font-size: 14px;
-  font-weight:bold;
-  color: #0046be;
-}
+
 
 .cartContainer {
+  /* border: solid red; */
     width: 65%;
     margin-left: 5%;
     gap: 20px;
@@ -293,6 +288,17 @@ a {
     padding: 8px;
     margin: 5px;
     font-weight: bold;
+  }
+
+  .flex{
+    display: flex;
+   
+    justify-content: space-between
+  }
+  .smallText{
+    font-size: 14px;
+    font-weight:bold;
+    color: #0046be;
   }
 
 .payment {
@@ -391,6 +397,15 @@ a {
   border-radius: 5px;
 }
 
+/* ---------------media query for medium screen------------------ */
+
+@media screen and (max-width:750px) and (max-width:1200) {
+  
+}
+
+
+/*----------------media quesry for small screen--------------------  */
+
 @media screen and (min-width:320px) and (max-width:750px) {
   .dynamicSec{
     grid-template-columns: repeat(3,1fr);
@@ -444,5 +459,54 @@ a {
   }
   .swiper-button-prev,.swiper-button-next{
     padding: 0px;
+  }
+  .proContainer{
+    /* border:solid red; */
+    grid-template-columns: repeat(2,1fr);
+  }
+  .proContainer img{
+    width: 100px;
+  }
+  .imgCard{
+    height: 150px;
+  }
+  .proContainer p{
+    font-size: 10px;
+  }
+  .filter{
+    margin-top:20%;
+    margin-bottom: 40px;
+    padding: 0px;
+  }
+  .filter select{
+    padding: 5px;
+    
+  }
+  /* cart page */
+  .maincont{
+    flex-direction: column;
+  }
+  .cartContainer {
+    width: 85%;
+    margin: auto;
+  
+  }
+  .cartContainer > div{
+    flex-direction: column;
+    text-align: center;
+
+   
+  }
+  .cartContainer img{
+    margin-left: 30%;
+    width: 100px;
+    /* border:solid green; */
+  }
+  .payment{
+    width: 85%;
+    margin: auto;
+  }
+  #tolItem{
+    width: 85%;
   }
 }
