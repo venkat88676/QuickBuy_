@@ -107,3 +107,15 @@ function logoutFun() {
   }
   
 }
+
+const menuItems = document.querySelectorAll('.menu-item');
+menuItems.forEach((item) => {
+  item.addEventListener('click', redirectToCategory);
+});
+
+function redirectToCategory(event) {
+  const category = event.target.getAttribute('data-value');
+  if (category) {
+    window.location.href = `products.html?type=${category}`;
+  }
+}

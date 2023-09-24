@@ -117,13 +117,21 @@ a{
     /* top: 50px; End position */
 }
 ul{
-    font-weight:100;
+    cursor: pointer;    
+    font-weight: bold;
+    /* font-weight:100; */
     font-size: 15px;
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items:center;
-    color: rgb(30, 30, 30);
+    color:#444949;
+    
+}
+ul li:hover{
+    /* background-color: #6fc81c; */
+    scale: 1.1;
+
 }
 
 /* -------------dropdown---------- */

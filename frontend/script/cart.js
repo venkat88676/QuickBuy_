@@ -5,7 +5,7 @@ let proContainer = document.querySelector(".cartContainer");
 
 
 function showCartDetails() { 
-  proContainer.innerHTML=`<img style="margin-left:200px" src="./images/loader3.gif" alt="">`
+  proContainer.innerHTML=`<img style="margin-left:200px" src="./images/loader3.gif" alt="">` || ""
   fetch(`${basicURL}/cart`, {
     headers: {
       Authorization: localStorage.getItem("token"),
@@ -22,8 +22,8 @@ function showCartDetails() {
     });
 }
 
-
-showCartDetails();
+document.addEventListener('DOMContentLoaded', showCartDetails);
+// showCartDetails();
 
 
 function displayData(res) {
@@ -141,3 +141,7 @@ function removeItem(elem) {
       console.log(err);
     });
 }
+
+
+
+

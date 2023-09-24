@@ -40,6 +40,9 @@ let proContainer = document.querySelector(".proContainer");
 function getData() {
   const queryParam = new URLSearchParams(window.location.search);
   let search = queryParam.get("q") || "";
+  
+  if(!category) category = queryParam.get("type") || "";
+  console.log("category", category)
 
   loader.classList.remove("hide");
   proContainer.innerHTML = null;

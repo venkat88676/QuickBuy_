@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="shortcut icon" href="./images/fav_icon.png" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -23,7 +25,7 @@
     <header></header>
 
     <!-- mainBody -->
-    <form class="checkout">
+    <form id="checkout">
             <h2>Shipping Information</h2>
             <input placeholder="Enter Your Name.." type="text" id="name" name="name" required>
             <input placeholder="Enter Your Address.. " type="text" id="address" name="address" required>
@@ -43,8 +45,9 @@
 
             <input type="text" id="cvv" placeholder="C v v" name="cvv" required="true">
           
-          <button onclick="submitCart()" id="submitCart">Submit</button>
-          </form>
+            <button type="submit" id="submitCart">Place Order</button>
+          <!-- <input type="submit" value="" > -->
+    </form>
     
     
   
@@ -53,13 +56,7 @@
   </body>
 </html>
 
-<script>
-    function submitCart(){
-      
-        alert("Order Has Been Placed")
-        window.location='./index.html'
-    }
-</script>
+<script  src="./script/checkout.js"></script>
 
 <script>
   $(function () {

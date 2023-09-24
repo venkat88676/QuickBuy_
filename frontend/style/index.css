@@ -290,7 +290,7 @@ a {
 .cartContainer {
   /* border: solid red; */
     width: 65%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
     gap: 20px;
   }
   .cartContainer img {
@@ -362,8 +362,8 @@ a {
   border-bottom: solid rgba(106, 99, 99, 0.712);
 }
 
-/* ----------------checkout page----------->*/
-.checkout {
+/* ---------------#checkout page----------->*/
+#checkout {
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -372,18 +372,19 @@ a {
   margin-left: 35%;
   padding: 10px;
   margin-bottom: 5%;
+ 
 }
-.checkout input {
+#checkout input {
   width: 95%;
   padding: 10px;
   margin: 10px;
 }
-.checkout select {
+#checkout select {
   width: 90%;
   padding: 10px;
   margin: 10px;
 }
-.checkout button {
+#submitCart {
   cursor: pointer;
   width: 80%;
   margin: auto;
@@ -396,6 +397,10 @@ a {
   margin-top: 20px;
   background-color: #ffce00;
   color: black;
+}
+#submitCart:hover{
+  background-color: transparent;
+  border: solid black;
 }
 
 
@@ -451,7 +456,7 @@ a {
   .imgCard{
     height: 160px;
   }
-  .checkout {
+  #checkout {
     width: 70%;
     margin: auto;
     margin-top: 15%;
@@ -564,7 +569,7 @@ a {
   #tolItem{
     width: 85%;
   }
-  .checkout {
+  #checkout {
     width: 90%;
     margin: auto;
     margin-top: 20%;
