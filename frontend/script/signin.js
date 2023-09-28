@@ -156,6 +156,30 @@ googleBtn.addEventListener("click", function (e) {
   window.location.href = `${BaseUrl}/users/auth/google`;
 });
 
+// ---------------make password visible----------------
+
+let eyeIcons = document.querySelectorAll(".eyeIcon");
+let eyeIconsOff = document.querySelectorAll(".eyeIcon-off");
+let passwordInput = document.querySelector('.password-input');
+
+eyeIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    
+    passwordInput.type = 'password';
+    eyeIconsOff.forEach((offIcon) => offIcon.classList.add("activate"));
+    eyeIcons.forEach((onIcon) => onIcon.classList.remove("activate"));
+  });
+});
+
+eyeIconsOff.forEach((icon) => {
+  icon.addEventListener("click", () => {
+  
+    passwordInput.type = 'text';
+    eyeIconsOff.forEach((offIcon) => offIcon.classList.remove("activate"));
+    eyeIcons.forEach((onIcon) => onIcon.classList.add("activate"));
+  });
+});
+
 
 
 

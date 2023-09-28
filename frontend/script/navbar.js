@@ -6,8 +6,10 @@ const BaseUrl=`https://dull-coveralls-fawn.cyclic.cloud`
 // get userId from url given by google auth--->
 
 let params = new URLSearchParams(window.location.search);
+
 let userId=params.get('userid');
 let token=params.get('token')
+
 
 if(userId && token){
     fetch(`${BaseUrl}/users/getdata/?_id=${userId}`)
@@ -70,6 +72,7 @@ noOfItems.innerText=localStorage.getItem("noOfItemInCart")||""
 
 
 // --------------show name in nav bar----->
+const refresh=false
 
 let checkInOutBtn = document.getElementById("checkInOutBtn");
 let userDetails = document.getElementById("userDetails");
@@ -93,7 +96,9 @@ function checkLogin() {
     logoutBtn.style.display = "none";
   }
 }
-setTimeout(checkLogin(),3000) ;
+
+checkLogin()
+// setTimeout(checkLogin(),3000) ;
 
 
 //  -----------logout function---------------

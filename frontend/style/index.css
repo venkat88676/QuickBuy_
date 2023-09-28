@@ -172,7 +172,7 @@ a {
   display: flex;
   justify-content: space-evenly;
   /* position: fixed; */
-  padding: 10px;
+  /* padding: 10px; */
   /* width: 25%; */
   margin-top: 10%;
   /* border: solid red; */
@@ -238,7 +238,7 @@ a {
 
   .proContainer button {
     cursor: pointer;
-    width: 60%;
+    width: 80%;
     font-size: 15px;
     color: rgb(255, 255, 255);
     padding: 10px;
@@ -407,7 +407,7 @@ a {
 
 /* ---------------media query for medium screen------------------ */
 
-@media screen and (min-width:750px) and (max-width:1200px) {
+@media screen and (min-width:700px) and (max-width:1200px) {
   .swiper {
     /* width: 100%; */
     height: 500px; 
@@ -468,26 +468,26 @@ a {
 
 /*----------------media query for small screen--------------------  */
 
-@media screen and (min-width:320px) and (max-width:750px) {
+@media screen and (min-width:320px) and (max-width:700px) {
   .swiper {
-    height: 320px; 
+    height: 310px; 
   }
   
   .swiper-slide img{
     text-align: center;
-    width:480px;
-    height: 320px;
+    width:380px;
+    height: 310px;
   }
   .swiper-button-prev,.swiper-button-next{
     padding: 0px;
   }
   .dynamicSec{
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     /* border: solid red; */
    
   }
   .dynamicSec img{
-    width: 100px;
+    width: 80px;
   }
   .dynamicSec p{
     font-size: 15px;
@@ -505,8 +505,12 @@ a {
   .title span{
     font-size: 30px;
   }
+  .sec{
+    grid-template-columns: repeat(2,1fr);
+    gap:0px;
+  }
   .sec img{
-    width: 120px;
+    width: 100px;
   }
   .sec p{
     display: none;
@@ -534,12 +538,16 @@ a {
     font-size: 10px;
   }
   .filter{
+    /* fl */
+    display: block;
+    text-align: center;
     margin-top:20%;
     margin-bottom: 40px;
-    padding: 0px;
+    padding: 5px;
   }
   .filter select{
     padding: 5px;
+    margin: 5px;
     
   }
   /* cart page */

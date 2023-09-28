@@ -67,16 +67,20 @@
   color: white;
 }
 
-#eyeIcon {
+.eyeIcon,.eyeIcon-off {
   position: relative;
   /* left: 60%; */
-  top: -10%;
-  left: 35%;
+  top: -35px;
+  left: 80%;
+  display: none;
 }
-#eyeIcon ion-icon {
+.eyeIcon.activate,.eyeIcon-off.activate{
+  display: block;
+}
+/* .eyeIcon ion-icon {
   font-size: large;
-  color: rgb(118, 110, 110);
-}
+  color: rgb(103, 105, 106);
+} */
 .signInBtn {
   cursor: pointer;
   margin: auto;
